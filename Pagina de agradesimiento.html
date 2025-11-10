@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Cita Dental Agendada! - Clínica Dental Sonrisa Perfecta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(51, 153, 204, 0.85)), url('blanquiamiento.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #FFFFFF;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Contenedor principal */
+        .success-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px 20px;
+            max-width: 500px;
+            width: 90%;
+            margin: 20px auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 0.6s ease-out;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Animación de fondo */
+        .success-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite reverse;
+            z-index: 0;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Icono de éxito */
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00D4FF, #00A3E0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+            animation: scaleIn 0.6s ease-out 0.3s both;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .success-icon i {
+            font-size: 40px;
+            color: white;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Título principal */
+        .success-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            color: #003366;
+            margin-bottom: 15px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        /* Frase motivadora - DEBAJO DEL TÍTULO */
+        .motivational-phrase {
+            background: linear-gradient(135deg, #00D4FF, #00A3E0);
+            color: white;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.6s ease-out 0.45s both;
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        .motivational-phrase h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        /* Mensaje principal */
+        .success-message {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.6s ease-out 0.5s both;
+        }
+
+        /* Información de la cita */
+        .appointment-info {
+            background: rgba(0, 51, 102, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.6s ease-out 0.55s both;
+        }
+
+        .appointment-info h4 {
+            color: #003366;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .appointment-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .appointment-details strong {
+            color: #003366;
+        }
+
+        /* Texto del tratamiento con color especial */
+        .treatment-name {
+            color: #FF6B6B;
+            font-weight: 700;
+        }
+
+        /* Fecha y hora juntos en detalles de la cita */
+        .date-time-container {
+            background: #003366;
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 51, 102, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .date-time-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .date-time-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+
+        .date-time-value {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        /* Precio destacado */
+        .price-display {
+            background: white;
+            border: 2px solid #00D4FF;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
+        }
+
+        .price-display .price-label {
+            color: #003366;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .price-display .price-value {
+            color: #00D4FF;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        /* Política de asistencia - SECCIÓN DESTACADA */
+        .policy-section {
+            background: linear-gradient(135deg, #FF6B6B, #FF4757);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.6s ease-out 0.6s both;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .policy-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .policy-header i {
+            font-size: 22px;
+            animation: pulse 2s infinite;
+        }
+
+        .policy-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .policy-text {
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.95;
+        }
+
+        /* Mensaje de cancelación/reprogramación */
+        .cancel-info {
+            background: #fff3cd;
+            color: #856404;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ffc107;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.6s ease-out 0.65s both;
+        }
+
+        .cancel-info h4 {
+            color: #FF6B6B;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .cancel-info p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .phone-number {
+            background: #003366;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        /* Palabras clave resaltadas */
+        .highlight {
+            color: #FF4757;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Botones de acción */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.6s ease-out 0.7s both;
+        }
+
+        .action-button {
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-calendar {
+            background: linear-gradient(135deg, #00D4FF, #00A3E0);
+            color: white;
+        }
+
+        .btn-calendar:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 51, 102, 0.9);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            margin-top: auto;
+            width: 100%;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer p {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .success-container {
+                padding: 25px 15px;
+                margin: 15px;
+            }
+
+            .success-title {
+                font-size: 24px;
+            }
+
+            .success-message {
+                font-size: 15px;
+            }
+
+            .motivational-phrase h3 {
+                font-size: 16px;
+            }
+
+            .policy-section {
+                padding: 15px;
+            }
+
+            .policy-title {
+                font-size: 16px;
+            }
+
+            .policy-text {
+                font-size: 13px;
+            }
+
+            .cancel-info {
+                padding: 15px;
+            }
+
+            .cancel-info h4 {
+                font-size: 15px;
+            }
+
+            .cancel-info p {
+                font-size: 13px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .action-button {
+                width: 100%;
+            }
+
+            .date-time-value {
+                font-size: 20px;
+            }
+
+            .price-display .price-value {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .success-container {
+                padding: 20px 15px;
+                margin: 10px;
+            }
+
+            .success-title {
+                font-size: 22px;
+            }
+
+            .success-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .success-icon i {
+                font-size: 35px;
+            }
+
+            .motivational-phrase h3 {
+                font-size: 15px;
+            }
+
+            .highlight {
+                font-size: 15px;
+            }
+
+            .footer {
+                font-size: 12px;
+                padding: 12px;
+            }
+
+            .date-time-value {
+                font-size: 18px;
+            }
+
+            .price-display .price-value {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <!-- Icono de éxito -->
+        <div class="success-icon">
+            <i class="fas fa-tooth"></i>
+        </div>
+
+        <!-- Título principal -->
+        <h1 class="success-title">¡Cita Dental Agendada!</h1>
+
+        <!-- Frase motivadora - DEBAJO DEL TÍTULO -->
+        <div class="motivational-phrase">
+            <h3>🌟 ¡Pronto tendrás la sonrisa que siempre deseaste!</h3>
+        </div>
+
+        <!-- Mensaje principal -->
+        <p class="success-message">
+            ¡Excelente! Tu cita ha sido agendada con éxito. Te contactaremos via WhatsApp en menos de 24 horas para confirmar los detalles de tu cita.
+        </p>
+
+        <!-- Información de la cita -->
+        <div class="appointment-info">
+            <h4>Detalles de tu Cita</h4>
+            <div class="appointment-details">
+                <span><strong>Servicio:</strong> <span class="treatment-name">Blanqueamiento Dental</span></span>
+            </div>
+            
+            <!-- Fecha y hora juntos en detalles de la cita -->
+            <div class="date-time-container">
+                <div class="date-time-item">
+                    <div class="date-time-label">FECHA</div>
+                    <div class="date-time-value" id="appointmentDate">28/11/2025</div>
+                </div>
+                <div class="date-time-item">
+                    <div class="date-time-label">HORA</div>
+                    <div class="date-time-value" id="appointmentTime">10:00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Precio destacado -->
+        <div class="price-display">
+            <div class="price-label">PRECIO CON DESCUENTO</div>
+            <div class="price-value">$2,500</div>
+        </div>
+
+        <!-- Política de asistencia - SECCIÓN DESTACADA -->
+        <div class="policy-section">
+            <div class="policy-header">
+                <i class="fas fa-info-circle"></i>
+                <h3 class="policy-title">Política de Asistencia</h3>
+            </div>
+            <p class="policy-text">
+                Debes asistir en el día y hora agendada. Si no puedes asistir, avisa con <strong>24 horas de anticipación</strong> o perderás tu cupón de descuento y no podrás reprogramar.
+            </p>
+        </div>
+
+        <!-- Mensaje de cancelación/reprogramación -->
+        <div class="cancel-info">
+            <h4>📱 Para Cancelar o Reprogramar</h4>
+            <p>Si necesitas cancelar o cambiar tu cita, debes enviar un mensaje al siguiente número con una de estas palabras:</p>
+            <p><span class="highlight">cancelar</span> o <span class="highlight">reprogramar</span></p>
+            <div class="phone-number">+598 98 123 456</p>
+            <p><small><i class="fas fa-exclamation-triangle"></i> Recuerda: Debes incluir una de las palabras clave para que tu solicitud sea procesada correctamente.</small></p>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="action-buttons">
+            <a href="#" class="action-button btn-calendar" onclick="addToCalendar()">
+                <i class="fas fa-calendar-plus"></i> Agendar al Calendario
+            </a>
+            <a href="https://wa.me/59898123456" class="action-button btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Clínica Dental Sonrisa Perfecta - Especialistas en Odontología Estética</p>
+        <p>Calle Principal 123, Montevideo, Uruguay | Tel: +598 98 123 456</p>
+    </div>
+
+    <script>
+        // Animación de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            // Agregar clase de entrada para animaciones
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease-in';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Prevenir que la página se cierre accidentalmente
+        window.addEventListener('beforeunload', function(e) {
+            if (document.querySelector('.success-container')) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+
+        // Función para agregar al calendario
+        function addToCalendar() {
+            const date = document.getElementById('appointmentDate').textContent;
+            const time = document.getElementById('appointmentTime').textContent;
+            
+            // Formatear fecha para Google Calendar
+            const [day, month, year] = date.split('/');
+            const formattedDate = `${year}-${month}-${day}`;
+            
+            // Formatear hora
+            const formattedTime = time.replace(':', '');
+            
+            // URL de Google Calendar
+            const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cita%20Dental&dates=${formattedDate}T${formattedTime}/20251130T110000&details=Cita%20en%20Cl%C3%ADnica%20Dental%20Sonrisa%20Perfecta&location=Calle%20Principal%20123,%20Montevideo,%20Uruguay`;
+            
+            // Abrir en nueva pestaña
+            window.open(calendarUrl, '_blank');
+        }
+
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const date = urlParams.get('date');
+        const time = urlParams.get('time');
+        
+        // Si hay fecha y hora en la URL, actualizar la información
+        if (date) {
+            document.getElementById('appointmentDate').textContent = date;
+        }
+        
+        if (time) {
+            document.getElementById('appointmentTime').textContent = time;
+        }
+    </script>
+</body>
+</html>
