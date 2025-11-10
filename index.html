@@ -1,0 +1,4201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-translate="title">BLACK FRIDAY SMILE | 50% OFF</title>
+ 
+  <!-- PIXEL DE META (Facebook) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'TU_ID_DE_PIXEL_DE_META'); // Reemplazar con tu ID de pixel
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=TU_ID_DE_PIXEL_DE_META&ev=PageView&noscript=1"
+  /></noscript>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+ 
+  <style>
+    :root {
+      --blue: #00D4FF;
+      --dark-blue: #00A3E0;
+      --black: #0F0F0F;
+      --gold: #FFD700;
+      --light: #FAFBFC;
+      --gradient: linear-gradient(135deg, #00D4FF, #00A3E0);
+      --gradient-bf: linear-gradient(90deg, #FF3B30, #FF6B6B);
+      --shadow: 0 25px 60px rgba(0,0,0,0.15);
+      --shadow-bf: 0 15px 35px rgba(255,59,48,0.4);
+    }
+   
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--black);
+      margin: 0;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    /* Selector de idioma */
+    .language-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1001;
+      display: flex;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 8px 15px;
+      border-radius: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+   
+    .language-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      color: #333;
+    }
+   
+    .language-btn:hover {
+      background: rgba(0, 212, 255, 0.1);
+    }
+   
+    .language-btn.active {
+      background: var(--gradient);
+      color: white;
+      box-shadow: 0 3px 10px rgba(0, 212, 255, 0.3);
+    }
+    /* BARRA */
+    .bf-bar {
+      background: linear-gradient(90deg, #000, #1a1a1a);
+      color: var(--gold);
+      text-align: center;
+      padding: 16px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    .bf-bar span { color: #FF3B30; font-weight: 900; }
+    /* HERO: IMAGEN DERECHA + TEXTO IZQUIERDA MÍNIMO */
+    .hero {
+      background: url('primer-imagen.png') no-repeat;
+      background-position: 90% -200px;
+      background-size: 55%;
+      min-height: 1100px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* TEXTO IZQUIERDA: MÍNIMO */
+    .hero-text {
+      position: relative;
+      z-index: 10;
+      max-width: 500px;
+      margin-left: 5%;
+      margin-top: 150px;
+    }
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-text p {
+      font-size: 1.25rem;
+      color: #333;
+      font-weight: 500;
+    }
+    /* OBJECIONES RESUELTAS */
+    .objection-handler {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 15px;
+      margin-top: 20px;
+      border: 2px solid rgba(0, 212, 255, 0.3);
+    }
+   
+    .objection-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+   
+    .objection-item i {
+      color: #4CAF50;
+      margin-right: 10px;
+      font-size: 1.1rem;
+    }
+    /* GARANTÍAS MEJORADAS */
+    .guarantees-section {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+   
+    .guarantee-item {
+      text-align: center;
+      padding: 20px;
+    }
+   
+    .guarantee-item i {
+      font-size: 2.5rem;
+      color: var(--blue);
+      margin-bottom: 15px;
+    }
+   
+    .guarantee-item h4 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+   
+    .guarantee-item p {
+      color: #666;
+    }
+    /* CERTIFICACIONES */
+    .certifications-section {
+      padding: 60px 0;
+      background: white;
+      text-align: center;
+    }
+   
+    .certifications-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+   
+    .certifications-logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+   
+    .certification-logo {
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+   
+    .certification-logo:hover {
+      transform: translateY(-5px);
+    }
+   
+    .certification-logo img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+    /* PROOF SOCIAL NUMÉRICO */
+    .social-proof-bar {
+      background: var(--black);
+      color: white;
+      padding: 25px 0;
+      text-align: center;
+    }
+   
+    .proof-item {
+      padding: 10px;
+    }
+   
+    .proof-item .number {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--blue);
+    }
+   
+    .proof-item span:last-child {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    /* BENEFICIOS EMOCIONALES */
+    .emotional-benefits {
+      padding: 60px 0;
+      background: white;
+    }
+   
+    .emotional-benefits h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+   
+    .emotional-benefits ul {
+      list-style: none;
+      padding: 0;
+    }
+   
+    .emotional-benefits li {
+      padding: 12px 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+    }
+   
+    .emotional-benefits li i {
+      color: var(--blue);
+      margin-right: 15px;
+      font-size: 1.3rem;
+      min-width: 25px;
+    }
+    /* POR QUÉ AHORA */
+    .urgency-reasons {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+   
+    .urgency-reasons h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+   
+    .reason-item {
+      text-align: center;
+      padding: 20px;
+    }
+   
+    .reason-item h4 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    /* PROCESO SIMPLIFICADO MEJORADO */
+    .simple-process {
+      padding: 60px 0;
+      background: white;
+    }
+   
+    .simple-process h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+   
+    .step {
+      text-align: center;
+      padding: 20px;
+    }
+   
+    .step-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 15px;
+      box-shadow: 0 10px 20px rgba(0,212,255,0.3);
+    }
+   
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 auto 15px;
+    }
+    /* COMPARACIÓN DIRECTA CON ALTERNATIVAS - MEJORADA */
+    .comparison-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      overflow: hidden;
+    }
+
+    .comparison-section h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 2.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .comparison-summary {
+      margin-bottom: 40px;
+    }
+
+    .summary-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      border: 2px solid rgba(0,212,255,0.3);
+    }
+
+    .summary-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+
+    .summary-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+
+    .summary-content p {
+      font-size: 1.1rem;
+      color: #666;
+      margin: 0;
+    }
+
+    .comparison-table {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .comparison-header {
+      display: flex;
+      background: var(--gradient);
+      color: white;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .comparison-row {
+      display: flex;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.3s ease;
+    }
+
+    .comparison-row:hover {
+      background-color: rgba(0,212,255,0.03);
+    }
+
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-feature {
+      flex: 2;
+      padding: 20px;
+      font-weight: 600;
+      background: #f8f9fa;
+      display: flex;
+      align-items: center;
+    }
+
+    .feature-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .feature-content i {
+      color: var(--blue);
+      font-size: 1.2rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    .comparison-option {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* SOLUCIÓN CORREGIDA: Solo etiqueta en las filas, no en el header */
+    .comparison-option.our-treatment {
+      background: rgba(0,212,255,0.1);
+      border: 3px solid var(--blue);
+      border-top: 8px solid var(--gradient-bf);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ELIMINAR ETIQUETA EN EL HEADER */
+    .comparison-header .comparison-option.our-treatment::before {
+      display: none;
+    }
+
+    /* ETIQUETA SOLO EN LAS FILAS */
+    .comparison-row .comparison-option.our-treatment::before {
+      content: "MEJOR OPCIÓN";
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gradient-bf);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      z-index: 10;
+      white-space: nowrap;
+      box-shadow: 0 3px 10px rgba(255,59,48,0.3);
+      animation: pulse 2s infinite;
+    }
+
+    .option-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .option-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .comparison-option.our-treatment .option-icon {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .option-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-value {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .price-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .comparison-option.our-treatment .price-value {
+      color: #FF3B30;
+    }
+
+    .feature-badge {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
+    .speed-badge {
+      background: rgba(76,175,80,0.1);
+      color: #4CAF50;
+      border: 1px solid rgba(76,175,80,0.3);
+    }
+
+    .slow-badge {
+      background: rgba(255,152,0,0.1);
+      color: #FF9800;
+      border: 1px solid rgba(255,152,0,0.3);
+    }
+
+    .guarantee-badge {
+      background: rgba(33,150,243,0.1);
+      color: #2196F3;
+      border: 1px solid rgba(33,150,243,0.3);
+    }
+
+    .risk-badge {
+      background: rgba(244,67,54,0.1);
+      color: #F44336;
+      border: 1px solid rgba(244,67,54,0.3);
+    }
+
+    .comfort-badge {
+      background: rgba(156,39,176,0.1);
+      color: #9C27B0;
+      border: 1px solid rgba(156,39,176,0.3);
+    }
+
+    .pain-badge {
+      background: rgba(244,67,54,0.1);
+      color: #F44336;
+      border: 1px solid rgba(244,67,54,0.3);
+    }
+
+    .value-badge {
+      background: rgba(255,193,7,0.1);
+      color: #FFC107;
+      border: 1px solid rgba(255,193,7,0.3);
+    }
+
+    .safety-badge {
+      background: rgba(76,175,80,0.1);
+      color: #4CAF50;
+      border: 1px solid rgba(76,175,80,0.3);
+    }
+
+    .danger-badge {
+      background: rgba(244,67,54,0.1);
+      color: #F44336;
+      border: 1px solid rgba(244,67,54,0.3);
+    }
+
+    .duration-badge {
+      background: rgba(0,150,136,0.1);
+      color: #009688;
+      border: 1px solid rgba(0,150,136,0.3);
+    }
+
+    .short-badge {
+      background: rgba(121,85,72,0.1);
+      color: #795548;
+      border: 1px solid rgba(121,85,72,0.3);
+    }
+
+    .feature-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .comparison-check {
+      color: #4CAF50;
+      font-size: 1.5rem;
+    }
+
+    .comparison-cross {
+      color: #FF3B30;
+      font-size: 1.5rem;
+    }
+
+    /* CONCLUSIÓN DE LA COMPARACIÓN */
+    .comparison-conclusion {
+      margin-top: 40px;
+    }
+
+    .conclusion-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      border: 2px solid rgba(0,212,255,0.3);
+    }
+
+    .conclusion-card h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .conclusion-card p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .conclusion-badges {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .conclusion-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,212,255,0.1);
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .conclusion-badge i {
+      font-size: 1.2rem;
+    }
+
+    .conclusion-cta {
+      background: var(--gradient);
+      color: white;
+      font-weight: 700;
+      font-size: 1.3rem;
+      padding: 15px 40px;
+      border-radius: 50px;
+      border: none;
+      box-shadow: 0 10px 25px rgba(0,212,255,0.5);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .conclusion-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,212,255,0.7);
+    }
+    /* POR QUÉ ELEGIRNOS */
+    .why-choose-us {
+      padding: 80px 0;
+      background: white;
+    }
+   
+    .why-choose-us h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 2.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+   
+    .differentiators {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+   
+    .differentiator {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(0,212,255,0.05);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+   
+    .differentiator:hover {
+      transform: translateY(-10px);
+    }
+   
+    .differentiator-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 20px;
+    }
+   
+    .differentiator h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    /* FORMULARIO + VIDEO MÁS ARRIBA - ACHICADO */
+    .hero-glass {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border-radius: 30px;
+      padding: 25px;
+      max-width: 1000px;
+      margin: 20px auto 0 auto;
+      box-shadow: var(--shadow), 0 0 100px rgba(0,212,255,0.4);
+      border: 3px solid rgba(0,212,255,0.55);
+      position: relative;
+      z-index: 10;
+    }
+    /* VIDEO VERTICAL VIMEO */
+    .video-box {
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+      height: 500px;
+      border: 5px solid rgba(255,255,255,0.9);
+      transition: transform 0.4s ease;
+      position: relative;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    .video-box:hover { transform: translateY(-8px); }
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    /* FORMULARIO MINIMALISTA - NUEVO DISEÑO */
+    .form-minimalist {
+      background: white;
+      border-radius: 25px;
+      padding: 25px;
+      box-shadow: 0 15px 40px rgba(0,212,255,0.3);
+      border: 2.5px solid rgba(0,212,255,0.4);
+      height: 100%;
+      position: relative;
+    }
+    .form-minimalist h2 {
+      font-size: 2.2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+    .form-minimalist .badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .form-minimalist .badge {
+      background: var(--gradient-bf);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 5px 15px rgba(255,59,48,0.3);
+    }
+    .form-minimalist .form-group {
+      margin-bottom: 15px;
+      position: relative;
+    }
+    .form-minimalist .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 15px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: #f8f9fa;
+    }
+    .form-minimalist .form-group input:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: white;
+      box-shadow: 0 0 0 4px rgba(0,212,255,0.1);
+    }
+    .form-minimalist .form-row {
+      display: flex;
+      gap: 15px;
+    }
+    .form-minimalist .form-row .form-group {
+      flex: 1;
+    }
+    .form-minimalist .btn-submit {
+      background: var(--gradient);
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 15px 20px;
+      border-radius: 15px;
+      border: none;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0,212,255,0.5);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .form-minimalist .btn-submit::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.3);
+      transition: left 0.5s ease;
+    }
+    .form-minimalist .btn-submit:hover::before {
+      left: 100%;
+    }
+    .form-minimalist .btn-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,212,255,0.7);
+    }
+    .form-minimalist .form-footer {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .form-minimalist .form-footer strong {
+      color: var(--blue);
+    }
+    .security-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,212,255,0.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: var(--blue);
+      border: 1px solid rgba(0,212,255,0.3);
+    }
+    .security-badge i {
+      color: #4CAF50;
+    }
+    /* CONTADOR REGRESIVO COMPACTO EN EL FORMULARIO */
+    .countdown-compact {
+      background: linear-gradient(90deg, #FF3B30, #FF6B6B);
+      color: white;
+      padding: 12px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .countdown-compact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('pattern.png') repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    .countdown-compact-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+    .countdown-compact h3 {
+      font-size: 1rem;
+      margin: 0;
+      font-weight: 700;
+    }
+    .countdown-timer-compact {
+      display: flex;
+      gap: 10px;
+    }
+    .countdown-item-compact {
+      background: rgba(255,255,255,0.2);
+      padding: 5px 10px;
+      border-radius: 8px;
+      min-width: 45px;
+    }
+    .countdown-number-compact {
+      font-size: 1.2rem;
+      font-weight: 800;
+      display: block;
+    }
+    .countdown-label-compact {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+    /* ALERTA DE CUPOS DISMINUYENDO */
+    .slots-alert {
+      background: rgba(255,59,48,0.1);
+      border: 2px solid #FF3B30;
+      border-radius: 15px;
+      padding: 12px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .slots-alert i {
+      color: #FF3B30;
+      font-size: 1.3rem;
+    }
+    .slots-alert-content {
+      flex: 1;
+    }
+    .slots-alert h4 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      color: #FF3B30;
+    }
+    .slots-alert p {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+    .slots-number {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #FF3B30;
+      margin-left: 10px;
+    }
+    /* ALERTA DE URGENCIA */
+    .urgency-alert {
+      background: rgba(255,59,48,0.1);
+      border: 2px solid #FF3B30;
+      border-radius: 15px;
+      padding: 12px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: pulse 2s infinite;
+    }
+    .urgency-alert i {
+      color: #FF3B30;
+      font-size: 1.3rem;
+    }
+    .urgency-alert-content {
+      flex: 1;
+    }
+    .urgency-alert h4 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+      color: #FF3B30;
+    }
+    .urgency-alert p {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+    /* PRECIOS DESTACADOS */
+    .price-comparison {
+      background: rgba(0,212,255,0.1);
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+      border: 2px solid rgba(0,212,255,0.3);
+    }
+    .price-original {
+      margin-bottom: 10px;
+    }
+    .price-original .price-value {
+      text-decoration: line-through;
+      color: #666;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .price-discount {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #FF3B30;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .price-label {
+      font-size: 1rem;
+      color: #333;
+      font-weight: 600;
+    }
+    .price-badge {
+      background: var(--gradient-bf);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 5px;
+    }
+    /* PRECIOS EN SECCIÓN ANTES/DESPUÉS */
+    .price-banner {
+      background: var(--gradient-bf);
+      color: white;
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(255,59,48,0.4);
+    }
+    .price-banner h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+    .price-banner .price-value {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+    .price-banner .price-original {
+      text-decoration: line-through;
+      color: rgba(255,255,255,0.7);
+      font-size: 1.2rem;
+    }
+    /* SECCIÓN ANTES Y DESPUÉS - 3 BLOQUES CON IMAGEN COMBINADA */
+    .before-after {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+    .before-after h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 2.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .comparison-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .comparison-item {
+      flex: 1;
+      min-width: 350px;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .comparison-item:hover {
+      transform: translateY(-10px);
+    }
+    .comparison-image-combined {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+    }
+    .comparison-image-combined img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .comparison-label-left, .comparison-label-right {
+      position: absolute;
+      top: 15px;
+      background: var(--gradient-bf);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 1rem;
+      z-index: 1;
+    }
+    .comparison-label-left {
+      left: 15px;
+    }
+    .comparison-label-right {
+      right: 15px;
+    }
+    .comparison-divider {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background: var(--gradient);
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .comparison-divider::before {
+      content: 'VS';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      color: var(--blue);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 3;
+    }
+    /* SECCIÓN TESTIMONIOS */
+    .testimonials {
+      padding: 80px 0;
+      background: var(--black);
+      color: white;
+    }
+    .testimonials h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 2.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .testimonials-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      flex: 1;
+      min-width: 320px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: transform 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+    }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 12px;
+    }
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .testimonial-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .testimonial-info .rating {
+      color: var(--gold);
+    }
+    .testimonial-text {
+      font-size: 1rem;
+      line-height: 1.5;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+    .testimonial-date {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+    }
+    /* SECCIÓN DOCTOR */
+    .doctor-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+    .doctor-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    .doctor-image {
+      flex: 1;
+      min-width: 280px;
+    }
+    .doctor-image img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    .doctor-info {
+      flex: 1;
+      min-width: 280px;
+    }
+    .doctor-info h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .doctor-info p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    .doctor-achievements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 1.5rem;
+    }
+    .achievement-item {
+      background: white;
+      border-radius: 12px;
+      padding: 12px 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .achievement-item i {
+      color: var(--blue);
+      font-size: 1.3rem;
+    }
+    .btn-doctor {
+      background: var(--gradient);
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 12px 25px;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 0 10px 25px rgba(0,212,255,0.4);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .btn-doctor:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,212,255,0.6);
+    }
+    /* SECCIÓN PREGUNTAS FRECUENTES */
+    .faq-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 2.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .faq-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .faq-item:hover {
+      transform: translateY(-5px);
+    }
+    .faq-question {
+      padding: 20px 25px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,212,255,0.05);
+      border-bottom: 1px solid rgba(0,212,255,0.1);
+    }
+    .faq-question h4 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--black);
+    }
+    .faq-question i {
+      color: var(--blue);
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      padding: 0 25px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+    }
+    .faq-item.active .faq-answer {
+      padding: 25px;
+      max-height: 1000px;
+    }
+    .faq-answer p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .faq-answer ul {
+      margin-bottom: 15px;
+      padding-left: 20px;
+    }
+    .faq-answer li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .highlight-box {
+      background: rgba(0,212,255,0.1);
+      border-left: 4px solid var(--blue);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .highlight-box i {
+      color: var(--blue);
+      font-size: 1.5rem;
+      margin-top: 5px;
+    }
+    .highlight-box h5 {
+      margin: 0 0 10px 0;
+      font-size: 1.2rem;
+      color: var(--blue);
+    }
+    .highlight-box p {
+      margin: 0;
+      line-height: 1.5;
+    }
+    .note {
+      font-style: italic;
+      color: #666;
+      background: rgba(255,255,255,0.7);
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+    /* LLAMADOS A LA ACCIÓN */
+    .cta-section {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #0F0F0F, #1a1a1a);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('pattern.png') repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .cta-content h2 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .urgency-badges {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .urgency-badge {
+      background: var(--gradient-bf);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 20px rgba(255,59,48,0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: pulse 2s infinite;
+    }
+    .urgency-badge i {
+      font-size: 1.3rem;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cta-button {
+      background: var(--gradient);
+      color: white;
+      font-weight: 700;
+      font-size: 1.3rem;
+      padding: 18px 40px;
+      border-radius: 50px;
+      border: none;
+      box-shadow: 0 15px 35px rgba(0,212,255,0.5);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.3);
+      transition: left 0.5s ease;
+    }
+    .cta-button:hover::before {
+      left: 100%;
+    }
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,212,255,0.7);
+    }
+    .cta-button.secondary {
+      background: transparent;
+      border: 3px solid var(--blue);
+    }
+    .cta-button.secondary:hover {
+      background: var(--blue);
+    }
+    /* PRECIOS EN CTA */
+    .cta-prices {
+      background: rgba(0,212,255,0.1);
+      border-radius: 20px;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 600px;
+      border: 2px solid rgba(0,212,255,0.3);
+    }
+    .cta-prices .price-original {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .cta-prices .price-value {
+      text-decoration: line-through;
+      color: rgba(255,255,255,0.7);
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .cta-prices .price-discount {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #FF3B30;
+      text-align: center;
+    }
+    /* CONTADOR */
+    .visitor-count {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--black);
+      color: white;
+      padding: 20px 40px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 999;
+      backdrop-filter: blur(18px);
+      border: 2px solid rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+    }
+    .visitor-count.hidden {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    .dot {
+      width: 18px; height: 18px;
+      background: #4CAF50;
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    /* BOTÓN DE CALENDARIO */
+    .cal-button {
+      background: var(--gradient-bf);
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 14px 20px;
+      border-radius: 15px;
+      border: none;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(255,59,48,0.4);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+   
+    .cal-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(255,59,48,0.6);
+    }
+    /* NOTIFICACIÓN EN TIEMPO REAL */
+    .real-time-notification {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 998;
+      max-width: 300px;
+      opacity: 0;
+      transform: translateX(100px);
+      transition: all 0.5s ease;
+      border-left: 4px solid var(--blue);
+    }
+   
+    .real-time-notification.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+   
+    .notification-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+   
+    .notification-text {
+      flex: 1;
+    }
+   
+    .notification-text strong {
+      color: var(--black);
+    }
+   
+    .notification-time {
+      font-size: 0.8rem;
+      color: #666;
+    }
+    /* Pop-up de Salida (CSS) */
+    .exit-popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+   
+    .exit-popup-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+   
+    .exit-popup {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    }
+   
+    .exit-popup-overlay.active .exit-popup {
+      transform: scale(1);
+    }
+   
+    .exit-popup h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+   
+    .exit-popup p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+   
+    .exit-popup .gift-badge {
+      background: var(--gradient-bf);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-block;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(255,59,48,0.3);
+    }
+   
+    .exit-popup .btn-stay {
+      background: var(--gradient);
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 12px 25px;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 0 10px 25px rgba(0,212,255,0.5);
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+   
+    .exit-popup .btn-stay:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,212,255,0.7);
+    }
+   
+    .exit-popup .btn-leave {
+      background: transparent;
+      color: #666;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+   
+    .exit-popup .btn-leave:hover {
+      background: #f5f5f5;
+    }
+   
+    .exit-popup .close-popup {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #999;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+   
+    .exit-popup .close-popup:hover {
+      color: #333;
+    }
+   
+    .exit-popup .countdown {
+      background: rgba(255,59,48,0.1);
+      border: 2px solid #FF3B30;
+      border-radius: 15px;
+      padding: 15px;
+      margin-top: 20px;
+      text-align: center;
+    }
+   
+    .exit-popup .countdown h4 {
+      color: #FF3B30;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+   
+    .exit-popup .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+   
+    .exit-popup .countdown-item {
+      background: rgba(255,255,255,0.7);
+      padding: 5px 10px;
+      border-radius: 8px;
+      min-width: 40px;
+    }
+   
+    .exit-popup .countdown-number {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #FF3B30;
+    }
+   
+    .exit-popup .countdown-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #666;
+    }
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero {
+        background-position: 80% -250px;
+        background-size: 65%;
+        min-height: 1350px;
+      }
+      .hero-text {
+        margin-left: 15px;
+        margin-top: 100px;
+        max-width: 90%;
+      }
+      .hero-text h1 { font-size: 2.4rem; }
+      .hero-glass {
+        margin-top: 15px;
+        padding: 20px;
+        max-width: 95%;
+      }
+      .video-box {
+        height: 400px;
+        max-width: 250px;
+      }
+      .form-minimalist { padding: 20px; }
+     
+      .doctor-content {
+        flex-direction: column;
+        text-align: center;
+      }
+     
+      .comparison-container {
+        flex-direction: column;
+      }
+      .comparison-item {
+        width: 100%;
+      }
+      .comparison-image-combined {
+        height: 300px;
+      }
+      .comparison-label-left, .comparison-label-right {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+      }
+      .comparison-divider::before {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
+     
+      .cta-prices {
+        padding: 15px;
+      }
+      .cta-prices .price-value {
+        font-size: 1.5rem;
+      }
+      .cta-prices .price-discount {
+        font-size: 2rem;
+      }
+     
+      .faq-section {
+        padding: 60px 0;
+      }
+     
+      .faq-section h2 {
+        font-size: 2.2rem;
+      }
+     
+      .faq-question {
+        padding: 15px 20px;
+      }
+     
+      .faq-question h4 {
+        font-size: 1.1rem;
+      }
+     
+      .faq-answer {
+        padding: 20px;
+      }
+     
+      .highlight-box {
+        flex-direction: column;
+        gap: 10px;
+      }
+     
+      .highlight-box i {
+        margin-top: 0;
+        align-self: flex-start;
+      }
+     
+      .real-time-notification {
+        bottom: 90px;
+        right: 20px;
+        max-width: 250px;
+      }
+     
+      .comparison-table {
+        overflow-x: auto;
+      }
+
+      .comparison-header, .comparison-row {
+        min-width: 700px;
+      }
+      
+      /* Ajustes responsive para la etiqueta MEJOR OPCIÓN en filas */
+      .comparison-row .comparison-option.our-treatment::before {
+        font-size: 0.6rem;
+        padding: 3px 10px;
+        top: -12px;
+      }
+      
+      .summary-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+      
+      .conclusion-badges {
+        gap: 15px;
+      }
+      
+      .conclusion-badge {
+        padding: 8px 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .bf-bar {
+        font-size: 0.9rem;
+        padding: 12px;
+      }
+     
+      .hero {
+        min-height: 900px;
+        background-position: 70% -300px;
+        background-size: 60%;
+      }
+     
+      .hero-text {
+        margin-left: 5%;
+        margin-top: 80px;
+        max-width: 90%;
+      }
+     
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+     
+      .hero-text p {
+        font-size: 1.1rem;
+      }
+     
+      .hero-glass {
+        margin-top: 10px;
+        padding: 15px;
+      }
+     
+      .video-box {
+        height: 300px;
+        max-width: 200px;
+      }
+     
+      .form-minimalist h2 {
+        font-size: 1.8rem;
+      }
+     
+      .form-minimalist .badge {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+      }
+     
+      .countdown-compact h3 {
+        font-size: 0.9rem;
+      }
+     
+      .countdown-item-compact {
+        min-width: 35px;
+        padding: 4px 8px;
+      }
+     
+      .countdown-number-compact {
+        font-size: 1rem;
+      }
+     
+      .countdown-label-compact {
+        font-size: 0.6rem;
+      }
+     
+      .slots-alert h4 {
+        font-size: 0.9rem;
+      }
+     
+      .slots-alert p {
+        font-size: 0.8rem;
+      }
+     
+      .price-comparison .price-value {
+        font-size: 1.2rem;
+      }
+     
+      .price-discount {
+        font-size: 1.5rem;
+      }
+     
+      .price-label {
+        font-size: 0.9rem;
+      }
+     
+      .price-badge {
+        font-size: 0.8rem;
+      }
+     
+      .before-after, .testimonials, .doctor-section, .faq-section {
+        padding: 60px 0;
+      }
+     
+      .before-after h2, .testimonials h2, .doctor-info h2, .faq-section h2 {
+        font-size: 2.2rem;
+      }
+     
+      .comparison-container {
+        gap: 20px;
+      }
+     
+      .comparison-item {
+        min-width: 100%;
+      }
+     
+      .comparison-image-combined {
+        height: 250px;
+      }
+     
+      .comparison-label-left, .comparison-label-right {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+      }
+     
+      .comparison-divider::before {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+      }
+     
+      .testimonial-card {
+        min-width: 100%;
+      }
+     
+      .testimonial-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+     
+      .testimonial-avatar {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+     
+      .doctor-content {
+        gap: 30px;
+      }
+     
+      .doctor-info h2 {
+        font-size: 2rem;
+      }
+     
+      .doctor-info p {
+        font-size: 1rem;
+      }
+     
+      .achievement-item {
+        padding: 10px 15px;
+      }
+     
+      .achievement-item i {
+        font-size: 1.1rem;
+      }
+     
+      .btn-doctor {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+     
+      .faq-question {
+        padding: 12px 15px;
+      }
+     
+      .faq-question h4 {
+        font-size: 1rem;
+      }
+     
+      .faq-answer {
+        padding: 15px;
+      }
+     
+      .faq-answer p {
+        font-size: 0.95rem;
+      }
+     
+      .faq-answer li {
+        font-size: 0.95rem;
+      }
+     
+      .highlight-box {
+        padding: 15px;
+      }
+     
+      .highlight-box h5 {
+        font-size: 1.1rem;
+      }
+     
+      .highlight-box p {
+        font-size: 0.95rem;
+      }
+     
+      .note {
+        font-size: 0.85rem;
+      }
+     
+      .cta-section {
+        padding: 40px 0;
+      }
+     
+      .cta-content h2 {
+        font-size: 2.2rem;
+      }
+     
+      .urgency-badges {
+        flex-direction: column;
+        gap: 10px;
+      }
+     
+      .urgency-badge {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+     
+      .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+     
+      .cta-button {
+        font-size: 1.1rem;
+        padding: 15px 30px;
+      }
+     
+      .cta-prices {
+        padding: 15px;
+        margin: 20px auto;
+      }
+     
+      .cta-prices .price-value {
+        font-size: 1.3rem;
+      }
+     
+      .cta-prices .price-discount {
+        font-size: 1.8rem;
+      }
+     
+      .visitor-count {
+        bottom: 20px;
+        right: 20px;
+        padding: 15px 25px;
+        font-size: 0.9rem;
+      }
+     
+      .dot {
+        width: 15px;
+        height: 15px;
+      }
+     
+      .real-time-notification {
+        bottom: 80px;
+        right: 15px;
+        max-width: 200px;
+      }
+     
+      .differentiator {
+        min-width: 100%;
+      }
+      
+      /* Ajustes responsive para la etiqueta MEJOR OPCIÓN en filas */
+      .comparison-row .comparison-option.our-treatment::before {
+        font-size: 0.55rem;
+        padding: 2px 8px;
+        top: -10px;
+      }
+      
+      .summary-card {
+        padding: 25px;
+      }
+      
+      .summary-content h3 {
+        font-size: 1.5rem;
+      }
+      
+      .conclusion-card {
+        padding: 30px 20px;
+      }
+      
+      .conclusion-card h3 {
+        font-size: 1.7rem;
+      }
+      
+      .conclusion-card p {
+        font-size: 1.1rem;
+      }
+      
+      .conclusion-cta {
+        font-size: 1.1rem;
+        padding: 12px 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 700px;
+        background-position: 60% -350px;
+        background-size: 70%;
+      }
+     
+      .hero-text {
+        margin-top: 60px;
+      }
+     
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+     
+      .hero-glass {
+        padding: 15px;
+      }
+     
+      .video-box {
+        height: 250px;
+        max-width: 180px;
+      }
+     
+      .form-minimalist h2 {
+        font-size: 1.6rem;
+      }
+     
+      .form-minimalist .form-row {
+        flex-direction: column;
+        gap: 10px;
+      }
+     
+      .form-minimalist .btn-submit {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+     
+      .countdown-compact-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+     
+      .countdown-timer-compact {
+        justify-content: center;
+      }
+     
+      .slots-alert {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+     
+      .urgency-alert {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+     
+      .price-comparison {
+        padding: 10px;
+      }
+     
+      .price-original .price-value {
+        font-size: 1.2rem;
+      }
+     
+      .price-discount {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 5px;
+      }
+     
+      .price-badge {
+        margin-top: 0;
+      }
+     
+      .before-after, .testimonials, .doctor-section, .faq-section {
+        padding: 40px 0;
+      }
+     
+      .before-after h2, .testimonials h2, .doctor-info h2, .faq-section h2 {
+        font-size: 1.8rem;
+      }
+     
+      .comparison-image-combined {
+        height: 200px;
+      }
+     
+      .comparison-label-left, .comparison-label-right {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+      }
+     
+      .comparison-divider::before {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+      }
+     
+      .testimonial-card {
+        padding: 20px;
+      }
+     
+      .testimonial-text {
+        font-size: 0.9rem;
+      }
+     
+      .doctor-achievements {
+        flex-direction: column;
+        gap: 10px;
+      }
+     
+      .achievement-item {
+        width: 100%;
+      }
+     
+      .faq-question {
+        padding: 10px 12px;
+      }
+     
+      .faq-question h4 {
+        font-size: 0.9rem;
+      }
+     
+      .faq-answer {
+        padding: 12px;
+      }
+     
+      .faq-answer p {
+        font-size: 0.9rem;
+      }
+     
+      .faq-answer li {
+        font-size: 0.9rem;
+      }
+     
+      .highlight-box {
+        padding: 12px;
+      }
+     
+      .highlight-box h5 {
+        font-size: 1rem;
+      }
+     
+      .highlight-box p {
+        font-size: 0.9rem;
+      }
+     
+      .note {
+        font-size: 0.85rem;
+      }
+     
+      .cta-section {
+        padding: 30px 0;
+      }
+     
+      .cta-content h2 {
+        font-size: 1.8rem;
+      }
+     
+      .urgency-badge {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+     
+      .cta-button {
+        font-size: 1rem;
+        padding: 12px 25px;
+      }
+     
+      .cta-prices {
+        padding: 12px;
+      }
+     
+      .cta-prices .price-value {
+        font-size: 1.2rem;
+      }
+     
+      .cta-prices .price-discount {
+        font-size: 1.5rem;
+      }
+     
+      .visitor-count {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px 20px;
+        font-size: 0.8rem;
+      }
+     
+      .dot {
+        width: 12px;
+        height: 12px;
+      }
+     
+      .real-time-notification {
+        bottom: 70px;
+        right: 10px;
+        max-width: 180px;
+        padding: 12px;
+      }
+      
+      .summary-card {
+        padding: 20px;
+      }
+      
+      .summary-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+      }
+      
+      .summary-content h3 {
+        font-size: 1.3rem;
+      }
+      
+      .summary-content p {
+        font-size: 1rem;
+      }
+      
+      .conclusion-card {
+        padding: 25px 15px;
+      }
+      
+      .conclusion-card h3 {
+        font-size: 1.5rem;
+      }
+      
+      .conclusion-card p {
+        font-size: 1rem;
+      }
+      
+      .conclusion-badges {
+        gap: 10px;
+      }
+      
+      .conclusion-badge {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+      
+      .conclusion-cta {
+        font-size: 1rem;
+        padding: 10px 25px;
+      }
+      
+      /* Ajustes responsive para la etiqueta MEJOR OPCIÓN en filas */
+      .comparison-row .comparison-option.our-treatment::before {
+        font-size: 0.5rem;
+        padding: 2px 6px;
+        top: -8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Selector de idioma -->
+  <div class="language-selector">
+    <button class="language-btn active" data-lang="es" title="Español">ES</button>
+    <button class="language-btn" data-lang="en" title="English">EN</button>
+  </div>
+  <!-- BARRA -->
+  <div class="bf-bar" data-translate="bf-bar">
+    BLACK FRIDAY: 50% OFF + REGALO | Quedan <span id="slots">17</span> cupos <span id="timer"></span>
+  </div>
+  <!-- HERO: TEXTO MÍNIMO + IMAGEN DERECHA -->
+  <section class="hero">
+    <div class="container">
+      <!-- TEXTO IZQUIERDA: SOLO H1 + 1 FRASE -->
+      <div class="hero-text">
+        <h1 data-translate="hero-title">¡Sonrisa Perfecta en 1 Hora!</h1>
+        <p data-translate="hero-subtitle">Blanqueamiento dental láser – 50% OFF</p>
+       
+        <!-- OBJECIONES RESUELTAS -->
+        <div class="objection-handler">
+          <div class="objection-item">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>¿Duele?</strong> Cero dolor - Tecnología avanzada</span>
+          </div>
+          <div class="objection-item">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>¿Es seguro?</strong> 100% seguro - 15 años de experiencia</span>
+          </div>
+          <div class="objection-item">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>¿Resultados?</strong> Garantizados - Hasta 8 tonos más blanco</span>
+          </div>
+        </div>
+      </div>
+      <!-- FORMULARIO + VIDEO MÁS ARRIBA - ACHICADO -->
+      <div class="hero-glass" id="mainForm">
+        <div class="row g-4 align-items-center">
+          <!-- VIDEO VERTICAL VIMEO -->
+          <div class="col-lg-6">
+            <div class="video-box">
+              <iframe
+                src="https://player.vimeo.com/video/148751763?autoplay=1&muted=1&loop=1&background=1"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+          <!-- FORMULARIO MINIMALISTA - NUEVO DISEÑO -->
+          <div class="col-lg-6">
+            <div class="form-minimalist">
+              <h2 data-translate="form-title">¡Reserva YA!</h2>
+              <div class="badges">
+                <span class="badge" data-translate="form-badge-1">28-30 NOV</span>
+                <span class="badge" data-translate="form-badge-2">SOLO 50 CUPOS</span>
+              </div>
+              <!-- CONTADOR REGRESIVO COMPACTO EN EL FORMULARIO -->
+              <div class="countdown-compact">
+                <div class="countdown-compact-content">
+                  <h3 data-translate="countdown-title">¡OFERTA EXCLUSIVA TERMINA EN!</h3>
+                  <div class="countdown-timer-compact">
+                    <div class="countdown-item-compact">
+                      <span class="countdown-number-compact" id="daysForm">00</span>
+                      <span class="countdown-label-compact" data-translate="days-label">Días</span>
+                    </div>
+                    <div class="countdown-item-compact">
+                      <span class="countdown-number-compact" id="hoursForm">00</span>
+                      <span class="countdown-label-compact" data-translate="hours-label">Horas</span>
+                    </div>
+                    <div class="countdown-item-compact">
+                      <span class="countdown-number-compact" id="minutesForm">00</span>
+                      <span class="countdown-label-compact" data-translate="minutes-label">Min</span>
+                    </div>
+                    <div class="countdown-item-compact">
+                      <span class="countdown-number-compact" id="secondsForm">00</span>
+                      <span class="countdown-label-compact" data-translate="seconds-label">Seg</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- ALERTA DE CUPOS DISMINUYENDO -->
+              <div class="slots-alert">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="slots-alert-content">
+                  <h4 data-translate="slots-alert-title">Cupos Disponibles</h4>
+                  <p data-translate="slots-alert-text">¡Solo quedan <span class="slots-number" id="slotsForm">17</span> cupones!</p>
+                </div>
+              </div>
+              <!-- ALERTA DE URGENCIA -->
+              <div class="urgency-alert">
+                <i class="fas fa-fire"></i>
+                <div class="urgency-alert-content">
+                  <h4 data-translate="urgency-alert-title">¡Oferta por Tiempo Limitado!</h4>
+                  <p data-translate="urgency-alert-text">No pierda esta oportunidad única de blanqueamiento dental al 50% de descuento</p>
+                </div>
+              </div>
+              <!-- PRECIOS DESTACADOS -->
+              <div class="price-comparison">
+                <div class="price-original">
+                  <span class="price-label" data-translate="price-normal-label">Precio normal:</span>
+                  <span class="price-value">$5000</span>
+                </div>
+                <div class="price-discount">
+                  <span class="price-label" data-translate="price-discount-label">Precio con descuento 50%:</span>
+                  <span class="price-value">$2500</span>
+                  <span class="price-badge" data-translate="price-badge-text">¡Ahorra $2500!</span>
+                </div>
+              </div>
+              <form id="reservationForm">
+                <div class="form-group">
+                  <input type="text" placeholder="Nombre completo" required data-translate-placeholder="name-placeholder">
+                </div>
+               
+                <div class="form-group">
+                  <input type="tel" placeholder="Número de WhatsApp" required data-translate-placeholder="phone-placeholder">
+                </div>
+               
+                <!-- BOTÓN DE CALENDARIO - REEMPLAZA LOS CAMPOS DE FECHA/HORA -->
+                <div class="form-group">
+                  <button type="button" class="cal-button"
+                    data-cal-link="aurora-point-digital/agenda-blanqueamiento-dental-black-friday"
+                    data-cal-namespace="agenda-blanqueamiento-dental-black-friday"
+                    data-cal-config='{"layout":"month_view"}'>
+                    <i class="fas fa-calendar-alt"></i> AGENDAR CITA
+                  </button>
+                </div>
+               
+                <button type="submit" class="btn-submit" data-translate="submit-btn">
+                  RESERVAR 50% OFF
+                </button>
+              </form>
+             
+              <p class="form-footer">
+                <strong data-translate="deadline-label">Fecha límite:</strong> <span data-translate="deadline-date">30 de Noviembre 2025</span>
+              </p>
+              <div class="security-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span data-translate="security-text">Registro seguro y cifrado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- GARANTÍAS MEJORADAS -->
+  <section class="guarantees-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 guarantee-item">
+          <i class="fas fa-shield-alt"></i>
+          <h4 data-translate="guarantee-1-title">Garantía de Resultados Específica</h4>
+          <p data-translate="guarantee-1-text">Hasta 8 tonos más blanco o te devolvemos el 100% de tu dinero.</p>
+        </div>
+        <div class="col-md-4 guarantee-item">
+          <i class="fas fa-tooth"></i>
+          <h4 data-translate="guarantee-2-title">Sin Sensibilidad Garantizada</h4>
+          <p data-translate="guarantee-2-text">Tecnología láser avanzada que elimina completamente la sensibilidad post-tratamiento.</p>
+        </div>
+        <div class="col-md-4 guarantee-item">
+          <i class="fas fa-clock"></i>
+          <h4 data-translate="guarantee-3-title">Resultados Inmediatos y Duraderos</h4>
+          <p data-translate="guarantee-3-text">En solo 1 hora, tu sonrisa será hasta 8 tonos más blanca, con resultados que duran hasta 2 años.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CERTIFICACIONES Y AVALES -->
+  <section class="certifications-section">
+    <div class="container">
+      <h2 data-translate="certifications-title">Avalado por las mejores instituciones dentales</h2>
+      <div class="certifications-logos">
+        <div class="certification-logo">
+          <img src="americandentalassociationlogo.png" alt="Asociación Dental Americana" data-translate-alt="ada-logo-alt">
+        </div>
+        <div class="certification-logo">
+          <img src="colgate.png" alt="Colgate Professional" data-translate-alt="colgate-logo-alt">
+        </div>
+        <div class="certification-logo">
+          <img src="ISO_9001-2015.svg.png" alt="Certificación ISO 9001" data-translate-alt="iso-logo-alt">
+        </div>
+        <div class="certification-logo">
+          <img src="fdiworlddentalfederation.png" alt="Asociación Dental Internacional" data-translate-alt="dental-association-logo-alt">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PROOF SOCIAL NUMÉRICO -->
+  <section class="social-proof-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 proof-item">
+          <span class="number">5,247</span>
+          <span data-translate="proof-1-text">Pacientes atendidos</span>
+        </div>
+        <div class="col-md-4 proof-item">
+          <span class="number">98%</span>
+          <span data-translate="proof-2-text">Recomiendan el tratamiento</span>
+        </div>
+        <div class="col-md-4 proof-item">
+          <span class="number">15</span>
+          <span data-translate="proof-3-text">Años de experiencia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECCIÓN ANTES Y DESPUÉS - 3 BLOQUES CON IMAGEN COMBINADA -->
+  <section class="before-after">
+    <div class="container">
+      <h2 data-translate="results-title">Resultados Impresionantes</h2>
+     
+      <!-- BANNER DE PRECIOS -->
+      <div class="price-banner">
+        <h3 data-translate="special-offer-title">¡Oferta Especial Black Friday!</h3>
+        <div class="price-value">$2500</div>
+        <div class="price-original">$5000</div>
+        <div class="price-badge" data-translate="discount-badge">¡50% DE DESCUENTO!</div>
+      </div>
+     
+      <div class="comparison-container">
+        <div class="comparison-item">
+          <div class="comparison-image-combined">
+            <img src="blanc1.jpg" alt="Antes y Después">
+            <div class="comparison-label-left" data-translate="before-label">ANTES</div>
+            <div class="comparison-label-right" data-translate="after-label">DESPUÉS</div>
+            <div class="comparison-divider"></div>
+          </div>
+        </div>
+       
+        <div class="comparison-item">
+          <div class="comparison-image-combined">
+            <img src="blanc2.jpg" alt="Antes y Después">
+            <div class="comparison-label-left" data-translate="before-label">ANTES</div>
+            <div class="comparison-label-right" data-translate="after-label">DESPUÉS</div>
+            <div class="comparison-divider"></div>
+          </div>
+        </div>
+       
+        <div class="comparison-item">
+          <div class="comparison-image-combined">
+            <img src="blanc3.jpg" alt="Antes y Después">
+            <div class="comparison-label-left" data-translate="before-label">ANTES</div>
+            <div class="comparison-label-right" data-translate="after-label">DESPUÉS</div>
+            <div class="comparison-divider"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- COMPARACIÓN DIRECTA CON ALTERNATIVAS - MEJORADA -->
+  <section class="comparison-section">
+    <div class="container">
+      <h2 data-translate="comparison-title">¿Por qué nuestro tratamiento es la mejor opción?</h2>
+      
+      <!-- Tarjeta de resumen destacada -->
+      <div class="comparison-summary">
+        <div class="summary-card">
+          <div class="summary-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <div class="summary-content">
+            <h3 data-translate="summary-title">La opción más inteligente</h3>
+            <p data-translate="summary-text">Combinamos la efectividad de las clínicas con el precio accesible de los kits caseros, eliminando sus desventajas.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="comparison-table">
+        <div class="comparison-header">
+          <div class="comparison-feature"><span data-translate="feature-label">Característica</span></div>
+          <div class="comparison-option our-treatment">
+            <div class="option-header">
+              <div class="option-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <span data-translate="our-treatment">Nuestro Tratamiento</span>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-header">
+              <div class="option-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <span data-translate="kits-caseros">Kits Caseros</span>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-header">
+              <div class="option-icon">
+                <i class="fas fa-clinic-medical"></i>
+              </div>
+              <span data-translate="otras-clinicas">Otras Clínicas</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tiempo de tratamiento -->
+        <div class="comparison-row">
+          <div class="comparison-feature">
+            <div class="feature-content">
+              <i class="fas fa-clock"></i>
+              <span data-translate="feature-time">Tiempo de Tratamiento</span>
+            </div>
+          </div>
+          <div class="comparison-option our-treatment">
+            <div class="option-content">
+              <i class="fas fa-check comparison-check"></i>
+              <span class="feature-value" data-translate="our-time">1 Hora</span>
+              <div class="feature-badge speed-badge">RÁPIDO</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <i class="fas fa-times comparison-cross"></i>
+              <span class="feature-value" data-translate="kits-time">Semanas</span>
+              <div class="feature-badge slow-badge">LENTO</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <i class="fas fa-check comparison-check"></i>
+              <span class="feature-value" data-translate="clinics-time">1-2 Horas</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Resultados garantizados -->
+        <div class="comparison-row">
+          <div class="comparison-feature">
+            <div class="feature-content">
+              <i class="fas fa-chart-line"></i>
+              <span data-translate="feature-results">Resultados Garantizados</span>
+            </div>
+          </div>
+          <div class="comparison-option our-treatment">
+            <div class="option-content">
+              <i class="fas fa-check comparison-check"></i>
+              <span class="feature-value" data-translate="our-results">Hasta 8 tonos</span>
+              <div class="feature-badge guarantee-badge">GARANTIZADO</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <i class="fas fa-times comparison-cross"></i>
+              <span class="feature-value" data-translate="kits-results">Variables</span>
+              <div class="feature-badge risk-badge">INCIERTO</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <i class="fas fa-check comparison-check"></i>
+              <span class="feature-value" data-translate="clinics-results">Variables</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sensibilidad -->
+        <div class="comparison-row">
+          <div class="comparison-feature">
+            <div class="feature-content">
+              <i class="fas fa-teeth"></i>
+              <span data-translate="feature-sensitivity">Sensibilidad</span>
+            </div>
+          </div>
+          <div class="comparison-option our-treatment">
+            <div class="option-content">
+              <i class="fas fa-check comparison-check"></i>
+              <span class="feature-value" data-translate="our-sensitivity">Cero</span>
+              <div class="feature-badge comfort-badge">CÓMODO</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <i class="fas fa-times comparison-cross"></i>
+              <span class="feature-value" data-translate="kits-sensitivity">Alta</span>
+              <div class="feature-badge pain-badge">DOLOROSO</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <i class="fas fa-check comparison-check"></i>
+              <span class="feature-value" data-translate="clinics-sensitivity">Moderada</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Precio -->
+        <div class="comparison-row">
+          <div class="comparison-feature">
+            <div class="feature-content">
+              <i class="fas fa-tag"></i>
+              <span data-translate="feature-price">Precio</span>
+            </div>
+          </div>
+          <div class="comparison-option our-treatment">
+            <div class="option-content">
+              <span class="price-value" data-translate="our-price">$2500</span>
+              <div class="feature-badge value-badge">MEJOR VALOR</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <span class="price-value" data-translate="kits-price">$500-$1500</span>
+              <div class="feature-note">Resultados pobres</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <span class="price-value" data-translate="clinics-price">$5000+</span>
+              <div class="feature-note">Muy costoso</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Seguridad -->
+        <div class="comparison-row">
+          <div class="comparison-feature">
+            <div class="feature-content">
+              <i class="fas fa-shield-alt"></i>
+              <span>Seguridad</span>
+            </div>
+          </div>
+          <div class="comparison-option our-treatment">
+            <div class="option-content">
+              <i class="fas fa-check comparison-check"></i>
+              <span class="feature-value">Máxima</span>
+              <div class="feature-badge safety-badge">SEGURO</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <i class="fas fa-times comparison-cross"></i>
+              <span class="feature-value">Riesgosa</span>
+              <div class="feature-badge danger-badge">RIESGO</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <i class="fas fa-check comparison-check"></i>
+              <span class="feature-value">Alta</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Duración de resultados -->
+        <div class="comparison-row">
+          <div class="comparison-feature">
+            <div class="feature-content">
+              <i class="fas fa-calendar-check"></i>
+              <span>Duración de Resultados</span>
+            </div>
+          </div>
+          <div class="comparison-option our-treatment">
+            <div class="option-content">
+              <i class="fas fa-check comparison-check"></i>
+              <span class="feature-value">Hasta 2 años</span>
+              <div class="feature-badge duration-badge">DURADERO</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <i class="fas fa-times comparison-cross"></i>
+              <span class="feature-value">Pocos meses</span>
+              <div class="feature-badge short-badge">CORTO</div>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <div class="option-content">
+              <i class="fas fa-check comparison-check"></i>
+              <span class="feature-value">1-2 años</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Conclusión destacada -->
+      <div class="comparison-conclusion">
+        <div class="conclusion-card">
+          <h3 data-translate="conclusion-title">La elección más inteligente para tu sonrisa</h3>
+          <p data-translate="conclusion-text">Nuestro tratamiento combina lo mejor de ambos mundos: la efectividad de una clínica profesional con un precio accesible, eliminando las desventajas de los kits caseros.</p>
+          <div class="conclusion-badges">
+            <div class="conclusion-badge">
+              <i class="fas fa-bolt"></i>
+              <span>Rápido</span>
+            </div>
+            <div class="conclusion-badge">
+              <i class="fas fa-shield-alt"></i>
+              <span>Seguro</span>
+            </div>
+            <div class="conclusion-badge">
+              <i class="fas fa-dollar-sign"></i>
+              <span>Económico</span>
+            </div>
+            <div class="conclusion-badge">
+              <i class="fas fa-medal"></i>
+              <span>Garantizado</span>
+            </div>
+          </div>
+          <button class="conclusion-cta" onclick="scrollToForm()" data-translate="conclusion-cta">Reservar Ahora 50% OFF</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section class="why-choose-us">
+    <div class="container">
+      <h2 data-translate="why-choose-title">¿Por qué somos tu mejor opción?</h2>
+      <div class="differentiators">
+        <div class="differentiator">
+          <div class="differentiator-icon">
+            <i class="fas fa-flask"></i>
+          </div>
+          <h3 data-translate="differentiator-1-title">Tecnología Patentada</h3>
+          <p data-translate="differentiator-1-text">Usamos un método exclusivo que no encontrarás en otra clínica, con resultados superiores.</p>
+        </div>
+        <div class="differentiator">
+          <div class="differentiator-icon">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <h3 data-translate="differentiator-2-title">Especialistas Certificados</h3>
+          <p data-translate="differentiator-2-text">Nuestro equipo está formado por odontólogos con más de 15 años de experiencia.</p>
+        </div>
+        <div class="differentiator">
+          <div class="differentiator-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 data-translate="differentiator-3-title">100% Seguro</h3>
+          <p data-translate="differentiator-3-text">Miles de pacientes satisfechos sin efectos secundarios.</p>
+        </div>
+        <div class="differentiator">
+          <div class="differentiator-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3 data-translate="differentiator-4-title">Premios y Reconocimientos</h3>
+          <p data-translate="differentiator-4-text">Ganadores del Premio a la Excelencia Dental 2023.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- BENEFICIOS EMOCIONALES -->
+  <section class="emotional-benefits">
+    <div class="container">
+      <h2 data-translate="emotional-benefits-title">¿Cómo cambiará tu vida una sonrisa más blanca?</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <ul>
+            <li><i class="fas fa-user-friends"></i> <span data-translate="benefit-1">Mayor confianza en reuniones sociales</span></li>
+            <li><i class="fas fa-briefcase"></i> <span data-translate="benefit-2">Mejores oportunidades laborales</span></li>
+            <li><i class="fas fa-camera"></i> <span data-translate="benefit-3">Fotos sin vergüenza</span></li>
+            <li><i class="fas fa-star"></i> <span data-translate="benefit-4">Complacimientos espontáneos</span></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li><i class="fas fa-heart"></i> <span data-translate="benefit-5">Apariencia más juvenil</span></li>
+            <li><i class="fas fa-heartbeat"></i> <span data-translate="benefit-6">Mejora tu vida romántica</span></li>
+            <li><i class="fas fa-smile"></i> <span data-translate="benefit-7">Sonríe sin complejos</span></li>
+            <li><i class="fas fa-chart-line"></i> <span data-translate="benefit-8">Autoestima por las nubes</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- POR QUÉ AHORA -->
+  <section class="urgency-reasons">
+    <div class="container">
+      <h2 data-translate="urgency-reasons-title">¿Por qué agendar HOY?</h2>
+      <div class="row">
+        <div class="col-md-4 reason-item">
+          <h4><i class="fas fa-lock"></i> <span data-translate="reason-1-title">Precio congelado</span></h4>
+          <p data-translate="reason-1-text">El precio sube a $5,000 después del Black Friday</p>
+        </div>
+        <div class="col-md-4 reason-item">
+          <h4><i class="fas fa-gift"></i> <span data-translate="reason-2-title">Limpieza GRATIS</span></h4>
+          <p data-translate="reason-2-text">Solo por reservar hoy, incluye limpieza dental profesional</p>
+        </div>
+        <div class="col-md-4 reason-item">
+          <h4><i class="fas fa-calendar-alt"></i> <span data-translate="reason-3-title">Cupos limitados</span></h4>
+          <p data-translate="reason-3-text">Solo atendemos 50 pacientes con este descuento</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PROCESO SIMPLIFICADO MEJORADO -->
+  <section class="simple-process">
+    <div class="container">
+      <h2 data-translate="process-title">Tu sonrisa perfecta en 3 pasos</h2>
+      <div class="row">
+        <div class="col-md-4 step">
+          <div class="step-icon">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <h4 data-translate="step-1-title">Agenda en 30 segundos</h4>
+          <p data-translate="step-1-text">Reserva tu cita con un simple formulario</p>
+        </div>
+        <div class="col-md-4 step">
+          <div class="step-icon">
+            <i class="fas fa-tooth"></i>
+          </div>
+          <h4 data-translate="step-2-title">Tratamiento de 1 hora</h4>
+          <p data-translate="step-2-text">Ven a nuestra clínica y relájate</p>
+        </div>
+        <div class="col-md-4 step">
+          <div class="step-icon">
+            <i class="fas fa-smile-beam"></i>
+          </div>
+          <h4 data-translate="step-3-title">Sonríe con confianza</h4>
+          <p data-translate="step-3-text">Disfruta de una sonrisa blanca y radiante</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECCIÓN TESTIMONIOS -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 data-translate="testimonials-title">Lo que dicen nuestros pacientes</h2>
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente 1">
+            </div>
+            <div class="testimonial-info">
+              <h4>Marta G.</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-text" data-translate="testimonial-1">
+            "El tratamiento fue increíblemente rápido y efectivo. En solo una hora mis dientes pasaron de amarillos a blancos. ¡No puedo dejar de sonreír! Y el precio de $2500 con el 50% de descuento fue increíble."
+          </div>
+          <div class="testimonial-date" data-translate="testimonial-1-date">Hace 3 días</div>
+        </div>
+       
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 2">
+            </div>
+            <div class="testimonial-info">
+              <h4>Carlos R.</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-text" data-translate="testimonial-2">
+            "Llev años intentando blanquear mis dientes con productos de farmacia sin resultados. Este tratamiento cambió por completo mi sonrisa. ¡Lo recomiendo 100%! El precio de $2500 con el 50% de descuento fue una oferta que no podía dejar pasar."
+          </div>
+          <div class="testimonial-date" data-translate="testimonial-2-date">Hace 1 semana</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECCIÓN DOCTOR -->
+  <section class="doctor-section">
+    <div class="container">
+      <div class="doctor-content">
+        <div class="doctor-image">
+          <img src="dtora.jpg" alt="Dr. Dental">
+        </div>
+        <div class="doctor-info">
+          <h2 data-translate="doctor-name">Dra. Claudia Méndez</h2>
+          <p data-translate="doctor-description">Especialista en Odontología Estética con más de 15 años de experiencia en blanqueamiento dental. Mi pasión es ayudar a mis pacientes a recuperar la confianza en su sonrisa a través de tratamientos innovadores y efectivos.</p>
+          <div class="doctor-achievements">
+            <div class="achievement-item">
+              <i class="fas fa-award"></i>
+              <span data-translate="achievement-1">Mejor Especialista 2023</span>
+            </div>
+            <div class="achievement-item">
+              <i class="fas fa-certificate"></i>
+              <span data-translate="achievement-2">Master en Estética Dental</span>
+            </div>
+            <div class="achievement-item">
+              <i class="fas fa-users"></i>
+              <span data-translate="achievement-3">+5,000 Pacientes Felices</span>
+            </div>
+          </div>
+          <p data-translate="tech-description">Utilizamos la tecnología láser más avanzada para garantizar resultados rápidos, seguros y duraderos. Nuestro método ha sido probado clínicamente y no causa sensibilidad dental.</p>
+          <div class="price-comparison" style="margin-top: 20px;">
+            <div class="price-original">
+              <span class="price-label" data-translate="price-normal-label">Precio normal:</span>
+              <span class="price-value">$5000</span>
+            </div>
+            <div class="price-discount">
+              <span class="price-label" data-translate="price-discount-label">Precio con descuento 50%:</span>
+              <span class="price-value">$2500</span>
+              <span class="price-badge" data-translate="special-offer-badge">¡Oferta Especial!</span>
+            </div>
+          </div>
+          <button class="btn-doctor" data-translate="schedule-btn">Agendar Consulta</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECCIÓN PREGUNTAS FRECUENTES -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 data-translate="faq-title">Preguntas Frecuentes</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4 data-translate="faq-1-question">¿Cuáles son los requisitos para realizarse el blanqueamiento?</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="faq-1-answer-1">Para realizarse el blanqueamiento dental, es necesario cumplir con dos requisitos importantes:</p>
+            <ul>
+              <li><strong data-translate="faq-1-answer-2">Debe tener una limpieza dental profunda previa.</strong></li>
+              <li><strong data-translate="faq-1-answer-3">No debe tener caries activas ni problemas de salud bucal.</strong></li>
+            </ul>
+            <div class="highlight-box">
+              <i class="fas fa-gift"></i>
+              <div>
+                <h5 data-translate="good-news-title">¡BUENAS NOTICIAS!</h5>
+                <p data-translate="good-news-text">La <strong>limpieza dental profunda viene de REGALO</strong> con tu tratamiento de blanqueamiento. No necesitas pagar extra por este requisito.</p>
+              </div>
+            </div>
+            <p class="note" data-translate="faq-1-note">Estos requisitos son importantes para garantizar que el tratamiento sea seguro y efectivo, evitando posibles complicaciones y asegurando los mejores resultados.</p>
+          </div>
+        </div>
+       
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4 data-translate="faq-2-question">¿Cuánto dura el tratamiento de blanqueamiento?</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="faq-2-answer-1">En condiciones normales de higiene bucal, el tratamiento de blanqueamiento puede durar hasta <strong>2 años</strong>.</p>
+            <div class="highlight-box">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h5 data-translate="duration-title">DURACIÓN DEL TRATAMIENTO</h5>
+                <p data-translate="duration-text">Con un buen cuidado dental y evitando hábitos como fumar o consumir bebidas muy pigmentadas, tus dientes mantendrán el blanco brillante por más tiempo.</p>
+              </div>
+            </div>
+            <p data-translate="faq-2-answer-2">Para prolongar los resultados, recomendamos:</p>
+            <ul>
+              <li data-translate="faq-2-tip-1">Evitar café, té, vino tinto y otros alimentos que manchen los dientes</li>
+              <li data-translate="faq-2-tip-2">Realizar una higiene dental adecuada (cepillado al menos 2 veces al día)</li>
+              <li data-translate="faq-2-tip-3">Usar hilo dental diariamente</li>
+              <li data-translate="faq-2-tip-4">Asistir a revisiones dentales periódicas</li>
+            </ul>
+          </div>
+        </div>
+       
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4 data-translate="faq-3-question">¿El tratamiento genera sensibilidad dental?</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="faq-3-answer-1">Algunos pacientes pueden experimentar sensibilidad dental después del tratamiento. Sin embargo, nuestro método avanzado minimiza este efecto:</p>
+            <ul>
+              <li data-translate="faq-3-tip-1">Utilizamos tecnología láser que reduces la sensibilidad</li>
+              <li data-translate="faq-3-tip-2">Aplicamos un gel desensibilizante durante el tratamiento</li>
+              <li data-translate="faq-3-tip-3">Proporcionamos un kit de post-tratamiento con pasta dental especial</li>
+            </ul>
+            <div class="highlight-box">
+              <i class="fas fa-shield-alt"></i>
+              <div>
+                <h5 data-translate="sensitivity-title">PROTECCIÓN CONTRA SENSIBILIDAD</h5>
+                <p data-translate="sensitivity-text">Nuestro protocolo incluye un tratamiento post-blanqueamiento para reducir cualquier molestia y proteger tus dientes.</p>
+              </div>
+            </div>
+            <p data-translate="faq-3-answer-2">La sensibilidad, si aparece, suele ser temporal y desaparece en 24-48 horas.</p>
+          </div>
+        </div>
+       
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4 data-translate="faq-6-question">¿Qué incluye el precio del tratamiento?</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="faq-6-answer-1">El precio de $2500 (con 50% de descuento) incluye:</p>
+            <ul>
+              <li data-translate="faq-6-item-1">Evaluación y consulta inicial</li>
+              <li data-translate="faq-6-item-2">Limpieza dental profunda (REGALO)</li>
+              <li data-translate="faq-6-item-3">Tratamiento de blanqueamiento láser completo</li>
+              <li data-translate="faq-6-item-4">Kit de post-tratamiento con pasta dental desensibilizante</li>
+              <li data-translate="faq-6-item-5">Control de seguimiento a los 7 días</li>
+            </ul>
+            <p data-translate="faq-6-answer-2">No hay costos ocultos ni sorpresas. El precio es todo incluido.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- LLAMADOS A LA ACCIÓN -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 data-translate="cta-title">¡No te quedes sin tu cupón!</h2>
+      <div class="urgency-badges">
+        <div class="urgency-badge">
+          <i class="fas fa-fire"></i>
+          <span data-translate="urgency-badge-1">¡Solo 50 Cupones Disponibles!</span>
+        </div>
+        <div class="urgency-badge">
+          <i class="fas fa-clock"></i>
+          <span data-translate="urgency-badge-2">Oferta por 3 Días Solo</span>
+        </div>
+        <div class="urgency-badge">
+          <i class="fas fa-gift"></i>
+          <span data-translate="urgency-badge-3">Regalo Especial Incluido</span>
+        </div>
+      </div>
+     
+      <!-- PRECIOS EN CTA -->
+      <div class="cta-prices">
+        <div class="price-original">
+          <span class="price-value">$5000</span>
+        </div>
+        <div class="price-discount">
+          <span class="price-value">$2500</span>
+          <span class="price-badge" data-translate="cta-discount-badge">¡50% DE DESCUENTO!</span>
+        </div>
+      </div>
+     
+      <div class="cta-buttons">
+        <button class="cta-button" onclick="scrollToForm()" data-translate="cta-btn-1">Reserva Ahora 50% OFF</button>
+        <button class="cta-button secondary" onclick="scrollToForm()" data-translate="cta-btn-2">Ver Fechas Disponibles</button>
+      </div>
+    </div>
+  </section>
+  <!-- CONTADOR -->
+  <div class="visitor-count" id="visitorCount">
+    <div class="dot"></div>
+    <span id="visitors">23</span> <span data-translate="viewers-text">personas viendo esta oferta</span>
+  </div>
+  <!-- NOTIFICACIÓN EN TIEMPO REAL -->
+  <div class="real-time-notification" id="realTimeNotification">
+    <div class="notification-content">
+      <div class="notification-text">
+        <strong id="notificationName">María G.</strong> <span data-translate="notification-text">acaba de reservar su blanqueamiento</span>
+        <span class="notification-time" data-translate="notification-time">Hace 2 minutos</span>
+      </div>
+    </div>
+  </div>
+  <!-- Pop-up de Salida -->
+  <div class="exit-popup-overlay" id="exitPopup">
+    <div class="exit-popup">
+      <button class="close-popup" onclick="closeExitPopup()">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3 data-translate="exit-popup-title">¡Espera! No te vayas todavía</h3>
+      <p data-translate="exit-popup-text">Hemos detectado que estás a punto de abandonar nuestra oferta exclusiva.</p>
+      <div class="gift-badge">
+        <i class="fas fa-gift"></i> <span data-translate="gift-text">¡Limpieza Dental REGALO!</span>
+      </div>
+      <p data-translate="exit-popup-description">Por quedarte, recibirás una <strong>limpieza dental profesional completamente GRATIS</strong> con tu tratamiento de blanqueamiento.</p>
+      <button class="btn-stay" onclick="closeExitPopup(); scrollToForm();" data-translate="stay-btn">¡Quedarme y Reservar!</button>
+      <button class="btn-leave" onclick="closeExitPopup();" data-translate="leave-btn">Seguir Navegando</button>
+     
+      <!-- Contador de tiempo restante -->
+      <div class="countdown">
+        <h4 data-translate="exit-countdown-title">¡La oferta termina en:</h4>
+        <div class="countdown-timer">
+          <div class="countdown-item">
+            <span class="countdown-number" id="exitDays">00</span>
+            <span class="countdown-label" data-translate="exit-days-label">Días</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="exitHours">00</span>
+            <span class="countdown-label" data-translate="exit-hours-label">Horas</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="exitMinutes">00</span>
+            <span class="countdown-label" data-translate="exit-minutes-label">Min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+ 
+  <!-- Cal element-click embed code begins -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "agenda-blanqueamiento-dental-black-friday", {origin:"https://app.cal.com"});
+    Cal.ns["agenda-blanqueamiento-dental-black-friday"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal element-click embed code ends -->
+ 
+  <!-- Objeto de traducciones -->
+  <script>
+    // Variable global para el idioma actual
+    let currentLang = 'es';
+    
+    // Objeto con todas las traducciones necesarias
+    const translations = {
+      es: {
+        title: "BLACK FRIDAY SMILE | 50% OFF",
+        "bf-bar": "BLACK FRIDAY: 50% OFF + REGALO | Quedan <span id=\"slots\">17</span> cupos <span id=\"timer\"></span>",
+        "hero-title": "¡Sonrisa Perfecta en 1 Hora!",
+        "hero-subtitle": "Blanqueamiento dental láser – 50% OFF",
+        "form-title": "¡Reserva YA!",
+        "form-badge-1": "28-30 NOV",
+        "form-badge-2": "SOLO 50 CUPOS",
+        "countdown-title": "¡OFERTA EXCLUSIVA TERMINA EN!",
+        "days-label": "Días",
+        "hours-label": "Horas",
+        "minutes-label": "Min",
+        "seconds-label": "Seg",
+        "slots-alert-title": "Cupos Disponibles",
+        "slots-alert-text": "¡Solo quedan <span class=\"slots-number\" id=\"slotsForm\">17</span> cupones!",
+        "urgency-alert-title": "¡Oferta por Tiempo Limitado!",
+        "urgency-alert-text": "No pierda esta oportunidad única de blanqueamiento dental al 50% de descuento",
+        "price-normal-label": "Precio normal:",
+        "price-discount-label": "Precio con descuento 50%:",
+        "price-badge-text": "¡Ahorra $2500!",
+        "name-placeholder": "Nombre completo",
+        "phone-placeholder": "Número de WhatsApp",
+        "submit-btn": "RESERVAR 50% OFF",
+        "deadline-label": "Fecha límite:",
+        "deadline-date": "30 de Noviembre 2025",
+        "security-text": "Registro seguro y cifrado",
+        "guarantee-1-title": "Garantía de Resultados Específica",
+        "guarantee-1-text": "Hasta 8 tonos más blanco o te devolvemos el 100% de tu dinero.",
+        "guarantee-2-title": "Sin Sensibilidad Garantizada",
+        "guarantee-2-text": "Tecnología láser avanzada que elimina completamente la sensibilidad post-tratamiento.",
+        "guarantee-3-title": "Resultados Inmediatos y Duraderos",
+        "guarantee-3-text": "En solo 1 hora, tu sonrisa será hasta 8 tonos más blanca, con resultados que duran hasta 2 años.",
+        "certifications-title": "Avalado por las mejores instituciones dentales",
+        "ada-logo-alt": "Asociación Dental Americana",
+        "colgate-logo-alt": "Colgate Professional",
+        "iso-logo-alt": "Certificación ISO 9001",
+        "dental-association-logo-alt": "Asociación Dental Internacional",
+        "proof-1-text": "Pacientes atendidos",
+        "proof-2-text": "Recomiendan el tratamiento",
+        "proof-3-text": "Años de experiencia",
+        "results-title": "Resultados Impresionantes",
+        "special-offer-title": "¡Oferta Especial Black Friday!",
+        "discount-badge": "¡50% DE DESCUENTO!",
+        "before-label": "ANTES",
+        "after-label": "DESPUÉS",
+        "comparison-title": "¿Por qué nuestro tratamiento es la mejor opción?",
+        "summary-title": "La opción más inteligente",
+        "summary-text": "Combinamos la efectividad de las clínicas con el precio accesible de los kits caseros, eliminando sus desventajas.",
+        "conclusion-title": "La elección más inteligente para tu sonrisa",
+        "conclusion-text": "Nuestro tratamiento combina lo mejor de ambos mundos: la efectividad de una clínica profesional con un precio accesible, eliminando las desventajas de los kits caseros.",
+        "conclusion-cta": "Reservar Ahora 50% OFF",
+        "feature-label": "Característica",
+        "our-treatment": "Nuestro Tratamiento",
+        "kits-caseros": "Kits Caseros",
+        "otras-clinicas": "Otras Clínicas",
+        "feature-time": "Tiempo de Tratamiento",
+        "our-time": "1 Hora",
+        "kits-time": "Semanas",
+        "clinics-time": "1-2 Horas",
+        "feature-results": "Resultados Garantizados",
+        "our-results": "Hasta 8 tonos",
+        "kits-results": "Variables",
+        "clinics-results": "Variables",
+        "feature-sensitivity": "Sensibilidad",
+        "our-sensitivity": "Cero",
+        "kits-sensitivity": "Alta",
+        "clinics-sensitivity": "Moderada",
+        "feature-price": "Precio",
+        "our-price": "$2500",
+        "kits-price": "$500-$1500",
+        "clinics-price": "$5000+",
+        "why-choose-title": "¿Por qué somos tu mejor opción?",
+        "differentiator-1-title": "Tecnología Patentada",
+        "differentiator-1-text": "Usamos un método exclusivo que no encontrarás en otra clínica, con resultados superiores.",
+        "differentiator-2-title": "Especialistas Certificados",
+        "differentiator-2-text": "Nuestro equipo está formado por odontólogos con más de 15 años de experiencia.",
+        "differentiator-3-title": "100% Seguro",
+        "differentiator-3-text": "Miles de pacientes satisfechos sin efectos secundarios.",
+        "differentiator-4-title": "Premios y Reconocimientos",
+        "differentiator-4-text": "Ganadores del Premio a la Excelencia Dental 2023.",
+        "emotional-benefits-title": "¿Cómo cambiará tu vida una sonrisa más blanca?",
+        "benefit-1": "Mayor confianza en reuniones sociales",
+        "benefit-2": "Mejores oportunidades laborales",
+        "benefit-3": "Fotos sin vergüenza",
+        "benefit-4": "Complacimientos espontáneos",
+        "benefit-5": "Apariencia más juvenil",
+        "benefit-6": "Mejora tu vida romántica",
+        "benefit-7": "Sonríe sin complejos",
+        "benefit-8": "Autoestima por las nubes",
+        "urgency-reasons-title": "¿Por qué agendar HOY?",
+        "reason-1-title": "Precio congelado",
+        "reason-1-text": "El precio sube a $5,000 después del Black Friday",
+        "reason-2-title": "Limpieza GRATIS",
+        "reason-2-text": "Solo por reservar hoy, incluye limpieza dental profesional",
+        "reason-3-title": "Cupos limitados",
+        "reason-3-text": "Solo atendemos 50 pacientes con este descuento",
+        "process-title": "Tu sonrisa perfecta en 3 pasos",
+        "step-1-title": "Agenda en 30 segundos",
+        "step-1-text": "Reserva tu cita con un simple formulario",
+        "step-2-title": "Tratamiento de 1 hora",
+        "step-2-text": "Ven a nuestra clínica y relájate",
+        "step-3-title": "Sonríe con confianza",
+        "step-3-text": "Disfruta de una sonrisa blanca y radiante",
+        "testimonials-title": "Lo que dicen nuestros pacientes",
+        "testimonial-1": "El tratamiento fue increíblemente rápido y efectivo. En solo una hora mis dientes pasaron de amarillos a blancos. ¡No puedo dejar de sonreír! Y el precio de $2500 con el 50% de descuento fue increíble.",
+        "testimonial-1-date": "Hace 3 días",
+        "testimonial-2": "Llev años intentando blanquear mis dientes con productos de farmacia sin resultados. Este tratamiento cambió por completo mi sonrisa. ¡Lo recomiendo 100%! El precio de $2500 con el 50% de descuento fue una oferta que no podía dejar pasar.",
+        "testimonial-2-date": "Hace 1 semana",
+        "doctor-name": "Dra. Claudia Méndez",
+        "doctor-description": "Especialista en Odontología Estética con más de 15 años de experiencia en blanqueamiento dental. Mi pasión es ayudar a mis pacientes a recuperar la confianza en su sonrisa a través de tratamientos innovadores y efectivos.",
+        "achievement-1": "Mejor Especialista 2023",
+        "achievement-2": "Master en Estética Dental",
+        "achievement-3": "+5,000 Pacientes Felices",
+        "tech-description": "Utilizamos la tecnología láser más avanzada para garantizar resultados rápidos, seguros y duraderos. Nuestro método ha sido probado clínicamente y no causa sensibilidad dental.",
+        "special-offer-badge": "¡Oferta Especial!",
+        "schedule-btn": "Agendar Consulta",
+        "faq-title": "Preguntas Frecuentes",
+        "faq-1-question": "¿Cuáles son los requisitos para realizarse el blanqueamiento?",
+        "faq-1-answer-1": "Para realizarse el blanqueamiento dental, es necesario cumplir con dos requisitos importantes:",
+        "faq-1-answer-2": "Debe tener una limpieza dental profunda previa.",
+        "faq-1-answer-3": "No debe tener caries activas ni problemas de salud bucal.",
+        "good-news-title": "¡BUENAS NOTICIAS!",
+        "good-news-text": "La <strong>limpieza dental profunda viene de REGALO</strong> con tu tratamiento de blanqueamiento. No necesitas pagar extra por este requisito.",
+        "faq-1-note": "Estos requisitos son importantes para garantizar que el tratamiento sea seguro y efectivo, evitando posibles complicaciones y asegurando los mejores resultados.",
+        "faq-2-question": "¿Cuánto dura el tratamiento de blanqueamiento?",
+        "faq-2-answer-1": "En condiciones normales de higiene bucal, el tratamiento de blanqueamiento puede durar hasta <strong>2 años</strong>.",
+        "duration-title": "DURACIÓN DEL TRATAMIENTO",
+        "duration-text": "Con un buen cuidado dental y evitando hábitos como fumar o consumir bebidas muy pigmentadas, tus dientes mantendrán el blanco brillante por más tiempo.",
+        "faq-2-answer-2": "Para prolongar los resultados, recomendamos:",
+        "faq-2-tip-1": "Evitar café, té, vino tinto y otros alimentos que manchen los dientes",
+        "faq-2-tip-2": "Realizar una higiene dental adecuada (cepillado al menos 2 veces al día)",
+        "faq-2-tip-3": "Usar hilo dental diariamente",
+        "faq-2-tip-4": "Asistir a revisiones dentales periódicas",
+        "faq-3-question": "¿El tratamiento genera sensibilidad dental?",
+        "faq-3-answer-1": "Algunos pacientes pueden experimentar sensibilidad dental después del tratamiento. Sin embargo, nuestro método avanzado minimiza este efecto:",
+        "faq-3-tip-1": "Utilizamos tecnología láser que reduces la sensibilidad",
+        "faq-3-tip-2": "Aplicamos un gel desensibilizante durante el tratamiento",
+        "faq-3-tip-3": "Proporcionamos un kit de post-tratamiento con pasta dental especial",
+        "sensitivity-title": "PROTECCIÓN CONTRA SENSIBILIDAD",
+        "sensitivity-text": "Nuestro protocolo incluye un tratamiento post-blanqueamiento para reducir cualquier molestia y proteger tus dientes.",
+        "faq-3-answer-2": "La sensibilidad, si aparece, suele ser temporal y desaparece en 24-48 horas.",
+        "faq-6-question": "¿Qué incluye el precio del tratamiento?",
+        "faq-6-answer-1": "El precio de $2500 (con 50% de descuento) incluye:",
+        "faq-6-item-1": "Evaluación y consulta inicial",
+        "faq-6-item-2": "Limpieza dental profunda (REGALO)",
+        "faq-6-item-3": "Tratamiento de blanqueamiento láser completo",
+        "faq-6-item-4": "Kit de post-tratamiento con pasta dental desensibilizante",
+        "faq-6-item-5": "Control de seguimiento a los 7 días",
+        "faq-6-answer-2": "No hay costos ocultos ni sorpresas. El precio es todo incluido.",
+        "cta-title": "¡No te quedes sin tu cupón!",
+        "urgency-badge-1": "¡Solo 50 Cupones Disponibles!",
+        "urgency-badge-2": "Oferta por 3 Días Solo",
+        "urgency-badge-3": "Regalo Especial Incluido",
+        "cta-discount-badge": "¡50% DE DESCUENTO!",
+        "cta-btn-1": "Reserva Ahora 50% OFF",
+        "cta-btn-2": "Ver Fechas Disponibles",
+        "viewers-text": "personas viendo esta oferta",
+        "notification-text": "acaba de reservar su blanqueamiento",
+        "notification-time": "Hace 2 minutos",
+        "exit-popup-title": "¡Espera! No te vayas todavía",
+        "exit-popup-text": "Hemos detectado que estás a punto de abandonar nuestra oferta exclusiva.",
+        "gift-text": "¡Limpieza Dental REGALO!",
+        "exit-popup-description": "Por quedarte, recibirás una <strong>limpieza dental profesional completamente GRATIS</strong> con tu tratamiento de blanqueamiento.",
+        "stay-btn": "¡Quedarme y Reservar!",
+        "leave-btn": "Seguir Navegando",
+        "exit-countdown-title": "¡La oferta termina en:",
+        "exit-days-label": "Días",
+        "exit-hours-label": "Horas",
+        "exit-minutes-label": "Min",
+        "ends-in": "Termina en",
+        "best-option-label": "MEJOR OPCIÓN"
+      },
+      en: {
+        title: "BLACK FRIDAY SMILE | 50% OFF",
+        "bf-bar": "BLACK FRIDAY: 50% OFF + GIFT | Only <span id=\"slots\">17</span> spots left <span id=\"timer\"></span>",
+        "hero-title": "Perfect Smile in 1 Hour!",
+        "hero-subtitle": "Laser teeth whitening – 50% OFF",
+        "form-title": "Book NOW!",
+        "form-badge-1": "NOV 28-30",
+        "form-badge-2": "ONLY 50 SPOTS",
+        "countdown-title": "EXCLUSIVE OFFER ENDS IN!",
+        "days-label": "Days",
+        "hours-label": "Hours",
+        "minutes-label": "Min",
+        "seconds-label": "Sec",
+        "slots-alert-title": "Available Spots",
+        "slots-alert-text": "Only <span class=\"slots-number\" id=\"slotsForm\">17</span> coupons left!",
+        "urgency-alert-title": "Limited Time Offer!",
+        "urgency-alert-text": "Don't miss this unique opportunity for 50% off teeth whitening",
+        "price-normal-label": "Regular price:",
+        "price-discount-label": "Price with 50% discount:",
+        "price-badge-text": "Save $2500!",
+        "name-placeholder": "Full name",
+        "phone-placeholder": "WhatsApp number",
+        "submit-btn": "BOOK 50% OFF",
+        "deadline-label": "Deadline:",
+        "deadline-date": "November 30, 2025",
+        "security-text": "Secure and encrypted registration",
+        "guarantee-1-title": "Specific Results Guarantee",
+        "guarantee-1-text": "Up to 8 shades whiter or we'll refund 100% of your money.",
+        "guarantee-2-title": "No Sensitivity Guaranteed",
+        "guarantee-2-text": "Advanced laser technology that completely eliminates post-treatment sensitivity.",
+        "guarantee-3-title": "Immediate and Long-lasting Results",
+        "guarantee-3-text": "In just 1 hour, your smile will be up to 8 shades whiter, with results lasting up to 2 years.",
+        "certifications-title": "Endorsed by the best dental institutions",
+        "ada-logo-alt": "American Dental Association",
+        "colgate-logo-alt": "Colgate Professional",
+        "iso-logo-alt": "ISO 9001 Certification",
+        "dental-association-logo-alt": "International Dental Association",
+        "proof-1-text": "Patients treated",
+        "proof-2-text": "Recommend the treatment",
+        "proof-3-text": "Years of experience",
+        "results-title": "Amazing Results",
+        "special-offer-title": "Special Black Friday Offer!",
+        "discount-badge": "50% DISCOUNT!",
+        "before-label": "BEFORE",
+        "after-label": "AFTER",
+        "comparison-title": "Why is our treatment the best option?",
+        "summary-title": "The Smartest Choice",
+        "summary-text": "We combine the effectiveness of clinics with the affordable price of home kits, eliminating their disadvantages.",
+        "conclusion-title": "The Smartest Choice for Your Smile",
+        "conclusion-text": "Our treatment combines the best of both worlds: the effectiveness of a professional clinic with an affordable price, eliminating the disadvantages of home kits.",
+        "conclusion-cta": "Book Now 50% OFF",
+        "feature-label": "Feature",
+        "our-treatment": "Our Treatment",
+        "kits-caseros": "Home Kits",
+        "otras-clinicas": "Other Clinics",
+        "feature-time": "Treatment Time",
+        "our-time": "1 Hour",
+        "kits-time": "Weeks",
+        "clinics-time": "1-2 Hours",
+        "feature-results": "Guaranteed Results",
+        "our-results": "Up to 8 shades",
+        "kits-results": "Variable",
+        "clinics-results": "Variable",
+        "feature-sensitivity": "Sensitivity",
+        "our-sensitivity": "Zero",
+        "kits-sensitivity": "High",
+        "clinics-sensitivity": "Moderate",
+        "feature-price": "Price",
+        "our-price": "$2500",
+        "kits-price": "$500-$1500",
+        "clinics-price": "$5000+",
+        "why-choose-title": "Why are we your best option?",
+        "differentiator-1-title": "Patented Technology",
+        "differentiator-1-text": "We use an exclusive method you won't find in any other clinic, with superior results.",
+        "differentiator-2-title": "Certified Specialists",
+        "differentiator-2-text": "Our team is made up of dentists with over 15 years of experience.",
+        "differentiator-3-title": "100% Safe",
+        "differentiator-3-text": "Thousands of satisfied patients with no side effects.",
+        "differentiator-4-title": "Awards and Recognition",
+        "differentiator-4-text": "Winners of the 2023 Dental Excellence Award.",
+        "emotional-benefits-title": "How will a whiter smile change your life?",
+        "benefit-1": "More confidence in social gatherings",
+        "benefit-2": "Better job opportunities",
+        "benefit-3": "Photos without embarrassment",
+        "benefit-4": "Spontaneous compliments",
+        "benefit-5": "More youthful appearance",
+        "benefit-6": "Improve your romantic life",
+        "benefit-7": "Smile without complexes",
+        "benefit-8": "Sky-high self-esteem",
+        "urgency-reasons-title": "Why book TODAY?",
+        "reason-1-title": "Frozen price",
+        "reason-1-text": "Price goes up to $5,000 after Black Friday",
+        "reason-2-title": "FREE Cleaning",
+        "reason-2-text": "Only by booking today, includes professional dental cleaning",
+        "reason-3-title": "Limited spots",
+        "reason-3-text": "We only treat 50 patients with this discount",
+        "process-title": "Your perfect smile in 3 steps",
+        "step-1-title": "Book in 30 seconds",
+        "step-1-text": "Reserve your appointment with a simple form",
+        "step-2-title": "1-hour treatment",
+        "step-2-text": "Come to our clinic and relax",
+        "step-3-title": "Smile with confidence",
+        "step-3-text": "Enjoy a white and radiant smile",
+        "testimonials-title": "What our patients say",
+        "testimonial-1": "The treatment was incredibly fast and effective. In just one hour my teeth went from yellow to white. I can't stop smiling! And the price of $2500 with 50% off was amazing.",
+        "testimonial-1-date": "3 days ago",
+        "testimonial-2": "I've been trying to whiten my teeth with pharmacy products for years without results. This treatment completely changed my smile. I recommend it 100%! The price of $2500 with 50% off was an offer I couldn't pass up.",
+        "testimonial-2-date": "1 week ago",
+        "doctor-name": "Dr. Claudia Méndez",
+        "doctor-description": "Specialist in Aesthetic Dentistry with over 15 years of experience in teeth whitening. My passion is helping my patients regain confidence in their smile through innovative and effective treatments.",
+        "achievement-1": "Best Specialist 2023",
+        "achievement-2": "Master in Aesthetic Dentistry",
+        "achievement-3": "+5,000 Happy Patients",
+        "tech-description": "We use the most advanced laser technology to ensure fast, safe and lasting results. Our method has been clinically tested and does not cause tooth sensitivity.",
+        "special-offer-badge": "Special Offer!",
+        "schedule-btn": "Schedule Consultation",
+        "faq-title": "Frequently Asked Questions",
+        "faq-1-question": "What are the requirements for teeth whitening?",
+        "faq-1-answer-1": "To undergo teeth whitening, you need to meet two important requirements:",
+        "faq-1-answer-2": "You must have a previous deep dental cleaning.",
+        "faq-1-answer-3": "You should not have active cavities or oral health problems.",
+        "good-news-title": "GOOD NEWS!",
+        "good-news-text": "The <strong>deep dental cleaning comes FREE</strong> with your whitening treatment. You don't need to pay extra for this requirement.",
+        "faq-1-note": "These requirements are important to ensure the treatment is safe and effective, avoiding possible complications and ensuring the best results.",
+        "faq-2-question": "How long does the whitening treatment last?",
+        "faq-2-answer-1": "Under normal oral hygiene conditions, the whitening treatment can last up to <strong>2 years</strong>.",
+        "duration-title": "TREATMENT DURATION",
+        "duration-text": "With good dental care and avoiding habits like smoking or consuming highly pigmented drinks, your teeth will stay bright white longer.",
+        "faq-2-answer-2": "To prolong the results, we recommend:",
+        "faq-2-tip-1": "Avoid coffee, tea, red wine and other foods that stain teeth",
+        "faq-2-tip-2": "Maintain proper dental hygiene (brushing at least 2 times a day)",
+        "faq-2-tip-3": "Use dental floss daily",
+        "faq-2-tip-4": "Attend regular dental check-ups",
+        "faq-3-question": "Does the treatment cause tooth sensitivity?",
+        "faq-3-answer-1": "Some patients may experience tooth sensitivity after treatment. However, our advanced method minimizes this effect:",
+        "faq-3-tip-1": "We use laser technology that reduces sensitivity",
+        "faq-3-tip-2": "We apply a desensitizing gel during treatment",
+        "faq-3-tip-3": "We provide a post-treatment kit with special toothpaste",
+        "sensitivity-title": "SENSITIVITY PROTECTION",
+        "sensitivity-text": "Our protocol includes a post-whitening treatment to reduce any discomfort and protect your teeth.",
+        "faq-3-answer-2": "If sensitivity occurs, it is usually temporary and disappears within 24-48 hours.",
+        "faq-6-question": "What does the treatment price include?",
+        "faq-6-answer-1": "The price of $2500 (with 50% discount) includes:",
+        "faq-6-item-1": "Evaluación y consulta inicial",
+        "faq-6-item-2": "Limpieza dental profunda (REGALO)",
+        "faq-6-item-3": "Tratamiento de blanqueamiento láser completo",
+        "faq-6-item-4": "Kit de post-tratamiento con pasta dental desensibilizante",
+        "faq-6-item-5": "Control de seguimiento a los 7 días",
+        "faq-6-answer-2": "No hay costos ocultos ni sorpresas. El precio es todo incluido.",
+        "cta-title": "Don't miss your coupon!",
+        "urgency-badge-1": "Only 50 Spots Available!",
+        "urgency-badge-2": "Offer for 3 Days Only",
+        "urgency-badge-3": "Special Gift Included",
+        "cta-discount-badge": "50% DISCOUNT!",
+        "cta-btn-1": "Book Now 50% OFF",
+        "cta-btn-2": "View Available Dates",
+        "viewers-text": "people viewing this offer",
+        "notification-text": "just booked their whitening",
+        "notification-time": "2 minutes ago",
+        "exit-popup-title": "Wait! Don't leave yet",
+        "exit-popup-text": "We've detected that you're about to leave our exclusive offer.",
+        "gift-text": "FREE Dental Cleaning!",
+        "exit-popup-description": "By staying, you'll receive a <strong>completely FREE professional dental cleaning</strong> with your teeth whitening treatment.",
+        "stay-btn": "Stay and Book Now!",
+        "leave-btn": "Continue Browsing",
+        "exit-countdown-title": "Offer ends in:",
+        "exit-days-label": "Days",
+        "exit-hours-label": "Hours",
+        "exit-minutes-label": "Min",
+        "ends-in": "Ends in",
+        "best-option-label": "BEST OPTION"
+      }
+    };
+   
+    // Función para cambiar el idioma
+    function changeLanguage(lang) {
+      // Actualizar la variable global
+      currentLang = lang;
+      
+      // Guardar la preferencia de idioma en localStorage
+      localStorage.setItem('preferredLanguage', lang);
+     
+      // Actualizar el atributo lang del elemento HTML
+      document.documentElement.lang = lang;
+     
+      // Actualizar los botones de idioma
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        if (btn.dataset.lang === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+     
+      // Traducir todos los elementos con atributos data-translate
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang][key]) {
+          element.innerHTML = translations[lang][key];
+        }
+      });
+     
+      // Traducir placeholders
+      document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-translate-placeholder');
+        if (translations[lang][key]) {
+          element.placeholder = translations[lang][key];
+        }
+      });
+     
+      // Traducir el título de la página
+      document.title = translations[lang].title;
+    }
+   
+    // Detectar el idioma del navegador y establecerlo como predeterminado
+    function detectBrowserLanguage() {
+      const browserLang = navigator.language || navigator.userLanguage;
+      const defaultLang = browserLang.startsWith('en') ? 'en' : 'es';
+      const savedLang = localStorage.getItem('preferredLanguage');
+     
+      // Si no hay una preferencia guardada, usar el idioma del navegador
+      if (!savedLang) {
+        changeLanguage(defaultLang);
+      } else {
+        changeLanguage(savedLang);
+      }
+    }
+   
+    // Inicializar el selector de idioma
+    document.addEventListener('DOMContentLoaded', function() {
+      // Detectar el idioma del navegador
+      detectBrowserLanguage();
+     
+      // Agregar event listeners a los botones de idioma
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          changeLanguage(this.dataset.lang);
+        });
+      });
+    });
+  </script>
+ 
+  <!-- Scripts para Google Sheets y Calendar -->
+  <script>
+    // Variables globales
+    let slots = 17;
+    let visitors = 23;
+    let minSlots = 10; // Mínimo de cupos para mantener la urgencia sin desanimar
+    let maxSlots = 17; // Máximo de cupos
+   
+    // Nombres latinos para notificaciones
+    const latinNames = [
+      "María González", "Carlos Rodríguez", "Ana Martínez", "Pedro López", "Laura Sánchez",
+      "José García", "Sofía Hernández", "Miguel Pérez", "Elena Díaz", "Juan Martínez"
+    ];
+   
+    // Actualizar contador de cupos con lógica realista
+    function updateSlots() {
+      // Decrementar aleatoriamente entre 1 y 3 cupos
+      const decrease = Math.floor(Math.random() * 3) + 1;
+      slots = Math.max(minSlots, slots - decrease);
+     
+      // Actualizar en la barra superior y en el formulario
+      document.getElementById('slots').textContent = slots;
+      document.getElementById('slotsForm').textContent = slots;
+     
+      // Mostrar notificación cuando se reserva un cupo
+      if (decrease > 0) {
+        showRecentBooking();
+      }
+     
+      // Cambiar color de alerta si quedan pocos cupos
+      if (slots <= 12) {
+        document.querySelector('.slots-alert').style.background = 'rgba(255,59,48,0.2)';
+        document.querySelector('.slots-alert h4').style.color = '#FF3B30';
+      }
+     
+      // Añadir cupos después de un tiempo para mantener la urgencia
+      setTimeout(() => {
+        const addSlots = Math.floor(Math.random() * 3) + 1;
+        slots = Math.min(maxSlots, slots + addSlots);
+        document.getElementById('slots').textContent = slots;
+        document.getElementById('slotsForm').textContent = slots;
+       
+        // Restaurar color normal si hay más cupos
+        if (slots > 12) {
+          document.querySelector('.slots-alert').style.background = 'rgba(255,59,48,0.1)';
+          document.querySelector('.slots-alert h4').style.color = '#FF3B30';
+        }
+      }, Math.random() * 20000 + 10000); // Entre 10 y 30 segundos
+    }
+   
+    // Ejecutar actualización de cupos con tiempos aleatorios
+    setInterval(updateSlots, Math.random() * 20000 + 10000); // Entre 10 y 30 segundos
+   
+    // Actualizar contador de visitantes
+    setInterval(() => {
+      visitors = Math.max(15, visitors + Math.floor(Math.random() * 7) - 3);
+      document.getElementById('visitors').textContent = visitors;
+    }, 3500);
+   
+    // Timer barra superior
+    setInterval(() => {
+      const now = new Date();
+      const end = new Date('2025-11-30T23:59:59');
+      const diff = end - now;
+      if (diff > 0) {
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const endsInText = translations[currentLang]['ends-in'];
+        document.getElementById('timer').textContent = ` | ${endsInText} ${days}d ${hours}h`;
+      }
+    }, 1000);
+   
+    // Contador regresivo en el formulario
+    function updateCountdownForm() {
+      const now = new Date();
+      const end = new Date('2025-11-30T23:59:59');
+      const diff = end - now;
+     
+      if (diff > 0) {
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const minutes = Math.floor((diff % 3600000) / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+       
+        document.getElementById('daysForm').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hoursForm').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutesForm').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('secondsForm').textContent = seconds.toString().padStart(2, '0');
+      }
+    }
+   
+    // Contador para el pop-up de salida
+    function updateExitCountdown() {
+      const now = new Date();
+      const end = new Date('2025-11-30T23:59:59');
+      const diff = end - now;
+     
+      if (diff > 0) {
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const minutes = Math.floor((diff % 3600000) / 60000);
+       
+        document.getElementById('exitDays').textContent = days.toString().padStart(2, '0');
+        document.getElementById('exitHours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('exitMinutes').textContent = minutes.toString().padStart(2, '0');
+      }
+    }
+   
+    setInterval(updateCountdownForm, 1000);
+    setInterval(updateExitCountdown, 1000);
+    updateCountdownForm();
+    updateExitCountdown();
+   
+    // Scroll al formulario principal
+    function scrollToForm() {
+      document.getElementById('mainForm').scrollIntoView({ behavior: 'smooth' });
+    }
+   
+    // Manejar envío del formulario
+    document.getElementById('reservationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+     
+      // Obtener datos del formulario
+      const formData = {
+        nombre: this.querySelector('input[type="text"]').value,
+        telefono: this.querySelector('input[type="tel"]').value,
+        timestamp: new Date().toISOString(),
+        precio: 2500,
+        descuento: 50
+      };
+     
+      // Simular procesamiento
+      const submitButton = this.querySelector('.btn-submit');
+      submitButton.textContent = 'Procesando...';
+      submitButton.disabled = true;
+     
+      // Enviar datos a Google Sheets
+      sendToGoogleSheets(formData);
+     
+      // Después de 2 segundos, mostrar éxito y actualizar cupos
+      setTimeout(() => {
+        submitButton.textContent = '¡Reserva Exitosa!';
+        submitButton.style.background = 'linear-gradient(90deg, #4CAF50, #8BC34A)';
+       
+        // Actualizar cupos después de una reserva exitosa
+        slots = Math.max(minSlots, slots - 1);
+        document.getElementById('slots').textContent = slots;
+        document.getElementById('slotsForm').textContent = slots;
+       
+        // Mostrar notificación de reserva reciente
+        showRecentBooking();
+       
+        // Restaurar botón después de 3 segundos
+        setTimeout(() => {
+          submitButton.textContent = translations[currentLang]['submit-btn'];
+          submitButton.style.background = '';
+          submitButton.disabled = false;
+        }, 3000);
+      }, 2000);
+    });
+   
+    // Función para enviar datos a Google Sheets
+    function sendToGoogleSheets(data) {
+      // Reemplaza con tu URL de Google Apps Script
+      const scriptURL = 'https://script.google.com/macros/s/TU_SCRIPT_ID/exec';
+     
+      fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        console.log('Datos enviados a Google Sheets:', data);
+      })
+      .catch(error => {
+        console.error('Error al enviar datos a Google Sheets:', error);
+      });
+    }
+   
+    // Funcionalidad para la sección de preguntas frecuentes
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+     
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+       
+        question.addEventListener('click', () => {
+          // Cerrar otros elementos FAQ
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+         
+          // Alternar el elemento actual
+          item.classList.toggle('active');
+        });
+      });
+     
+      // Animación de entrada para elementos FAQ
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      const faqObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        faqObserver.observe(el);
+      });
+     
+      // Mostrar notificaciones en tiempo real
+      setInterval(showRecentBooking, 45000);
+    });
+   
+    // Animación de entrada para elementos
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.comparison-item, .testimonial-card, .doctor-content, .guarantee-item, .step, .reason-item, .differentiator');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+     
+      elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+      });
+    });
+   
+    // Alerta dinámica cuando el usuario completa campos
+    document.querySelectorAll('.form-minimalist input').forEach(input => {
+      input.addEventListener('input', function() {
+        if (this.value.length > 0) {
+          this.style.borderColor = '#4CAF50';
+          this.style.boxShadow = '0 0 0 4px rgba(76,175,80,0.2)';
+        }
+      });
+    });
+   
+    // Mostrar notificación de reserva reciente
+    function showRecentBooking() {
+      const notification = document.getElementById('realTimeNotification');
+      const randomName = latinNames[Math.floor(Math.random() * latinNames.length)];
+     
+      document.getElementById('notificationName').textContent = randomName;
+     
+      notification.classList.add('show');
+     
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 5000);
+    }
+   
+    // Pop-up de salida
+    let exitPopupTimer;
+    let hasShownExitPopup = false;
+    let scrollTimer;
+    let scrollDirection = 0;
+    let lastScrollTop = 0;
+    let exitPopupTimeout;
+   
+    // Función para mostrar el pop-up de salida
+    function showExitPopup() {
+      if (!hasShownExitPopup) {
+        document.getElementById('exitPopup').classList.add('active');
+        hasShownExitPopup = true;
+       
+        // Actualizar contador del pop-up
+        updateExitCountdown();
+       
+        // Configurar temporizador para cerrar automáticamente después de 30 segundos
+        exitPopupTimer = setTimeout(() => {
+          closeExitPopup();
+        }, 30000);
+      }
+    }
+   
+    // Función para cerrar el pop-up de salida
+    function closeExitPopup() {
+      document.getElementById('exitPopup').classList.remove('active');
+      clearTimeout(exitPopupTimer);
+    }
+   
+    // Mostrar pop-up después de 30 segundos en la página
+    setTimeout(() => {
+      if (!hasShownExitPopup) {
+        showExitPopup();
+      }
+    }, 30000);
+   
+    // Detectar cuando el usuario intenta salir con el mouse
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY < 0 && !hasShownExitPopup) {
+        showExitPopup();
+      }
+    });
+   
+    // Detectar cambios en el scroll (intentos de salir hacia arriba)
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+     
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        scrollDirection = 1;
+      } else {
+        // Scrolling up
+        scrollDirection = -1;
+      }
+     
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+     
+      // Si el usuario se desplaza hacia arriba y está cerca del inicio de la página
+      if (scrollDirection === -1 && scrollTop < 100 && !hasShownExitPopup) {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+          showExitPopup();
+        }, 1000);
+      }
+    });
+   
+    // Detectar cuando el usuario presiona la tecla Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !hasShownExitPopup) {
+        showExitPopup();
+      }
+    });
+   
+    // Detectar cuando el usuario intenta cerrar la pestaña
+    window.addEventListener('beforeunload', function(e) {
+      if (!hasShownExitPopup) {
+        // Mostrar un mensaje nativo del navegador
+        e.preventDefault();
+        e.returnValue = '';
+       
+        // Mostrar nuestro pop-up después de un breve retraso
+        setTimeout(() => {
+          showExitPopup();
+        }, 100);
+      }
+    });
+   
+    // Ocultar/mostrar contador al llegar a la sección CTA
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.getElementById('visitorCount').classList.add('hidden');
+        } else {
+          document.getElementById('visitorCount').classList.remove('hidden');
+        }
+      });
+    }, observerOptions);
+    observer.observe(document.querySelector('.cta-section'));
+  </script>
+</body>
+</html>
