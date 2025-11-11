@@ -49,41 +49,120 @@
       overflow-x: hidden;
     }
     h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-    /* Selector de idioma */
+    
+    /* BANNER MÓVIL */
+    .mobile-banner {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: white;
+      z-index: 10000;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-banner.show {
+      display: flex;
+    }
+    
+    .mobile-banner.hide {
+      transform: translateY(100%);
+    }
+    
+    .mobile-banner-text {
+      flex: 1;
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .mobile-banner-button {
+      background: #FF3B30;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 12px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    
+    .mobile-banner-close {
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: #666;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    
+    /* Selector de idioma - MEJORADO CON MENÚ DESPLEGABLE */
     .language-selector {
       position: fixed;
       top: 20px;
       right: 20px;
       z-index: 1001;
       display: flex;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 8px 15px;
-      border-radius: 30px;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       backdrop-filter: blur(10px);
+      overflow: hidden;
+      width: 50px;
+      transition: all 0.3s ease;
     }
-   
+    
+    .language-selector.expanded {
+      width: 120px;
+    }
+    
+    .language-current {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    
+    .language-options {
+      display: none;
+      flex-direction: column;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .language-selector.expanded .language-options {
+      display: flex;
+    }
+    
     .language-btn {
       background: none;
       border: none;
-      font-size: 1.2rem;
+      padding: 8px 12px;
       cursor: pointer;
-      padding: 5px 10px;
-      border-radius: 20px;
       transition: all 0.3s ease;
+      text-align: left;
+      font-size: 0.9rem;
       color: #333;
     }
-   
+    
     .language-btn:hover {
       background: rgba(0, 212, 255, 0.1);
     }
-   
+    
     .language-btn.active {
       background: var(--gradient);
       color: white;
-      box-shadow: 0 3px 10px rgba(0, 212, 255, 0.3);
     }
+    
     /* BARRA */
     .bf-bar {
       background: linear-gradient(90deg, #000, #1a1a1a);
@@ -103,6 +182,7 @@
       50% { transform: scale(1.02); }
     }
     .bf-bar span { color: #FF3B30; font-weight: 900; }
+    
     /* HERO: IMAGEN DERECHA + TEXTO IZQUIERDA MÍNIMO */
     .hero {
       background: url('primer-imagen.png') no-repeat;
@@ -112,6 +192,7 @@
       position: relative;
       overflow: hidden;
     }
+    
     /* TEXTO IZQUIERDA: MÍNIMO */
     .hero-text {
       position: relative;
@@ -135,6 +216,7 @@
       color: #333;
       font-weight: 500;
     }
+    
     /* OBJECIONES RESUELTAS */
     .objection-handler {
       background: rgba(255, 255, 255, 0.9);
@@ -156,6 +238,7 @@
       margin-right: 10px;
       font-size: 1.1rem;
     }
+    
     /* GARANTÍAS MEJORADAS */
     .guarantees-section {
       padding: 60px 0;
@@ -182,6 +265,7 @@
     .guarantee-item p {
       color: #666;
     }
+    
     /* CERTIFICACIONES */
     .certifications-section {
       padding: 60px 0;
@@ -226,6 +310,7 @@
       max-width: 80%;
       max-height: 80%;
     }
+    
     /* PROOF SOCIAL NUMÉRICO */
     .social-proof-bar {
       background: var(--black);
@@ -249,6 +334,7 @@
       font-size: 0.9rem;
       opacity: 0.8;
     }
+    
     /* BENEFICIOS EMOCIONALES */
     .emotional-benefits {
       padding: 60px 0;
@@ -284,6 +370,7 @@
       font-size: 1.3rem;
       min-width: 25px;
     }
+    
     /* POR QUÉ AHORA */
     .urgency-reasons {
       padding: 60px 0;
@@ -309,6 +396,7 @@
       font-size: 1.3rem;
       margin-bottom: 10px;
     }
+    
     /* PROCESO SIMPLIFICADO MEJORADO */
     .simple-process {
       padding: 60px 0;
@@ -357,6 +445,7 @@
       font-weight: 700;
       margin: 0 auto 15px;
     }
+    
     /* COMPARACIÓN DIRECTA CON ALTERNATIVAS - MEJORADA */
     .comparison-section {
       padding: 80px 0;
@@ -414,6 +503,7 @@
       margin: 0;
     }
 
+    /* TABLA DE COMPARACIÓN PARA ESCRITORIO */
     .comparison-table {
       background: white;
       border-radius: 20px;
@@ -647,6 +737,139 @@
       font-size: 1.5rem;
     }
 
+    /* TABLA DE COMPARACIÓN PARA MÓVILES - MEJORADA */
+    .comparison-mobile {
+      display: none;
+    }
+
+    .comparison-mobile-card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border: 2px solid rgba(0,212,255,0.2);
+      position: relative;
+    }
+
+    .comparison-mobile-card.our-treatment {
+      border-color: var(--blue);
+      border-top: 8px solid var(--gradient-bf);
+    }
+
+    .comparison-mobile-card.our-treatment::before {
+      content: "MEJOR OPCIÓN";
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gradient-bf);
+      color: white;
+      padding: 6px 15px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      z-index: 10;
+      white-space: nowrap;
+      box-shadow: 0 3px 10px rgba(255,59,48,0.3);
+    }
+
+    .comparison-mobile-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .comparison-mobile-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .comparison-mobile-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .comparison-mobile-features {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .comparison-mobile-feature {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .comparison-mobile-feature:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-mobile-feature-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .comparison-mobile-feature-name i {
+      color: var(--blue);
+      font-size: 1.1rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .comparison-mobile-feature-value {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    .comparison-mobile-price {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+
+    .comparison-mobile-price-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 5px;
+    }
+
+    .comparison-mobile-price-value.our-price {
+      color: #FF3B30;
+    }
+
+    .comparison-mobile-badge {
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 8px;
+      display: inline-block;
+    }
+
     /* CONCLUSIÓN DE LA COMPARACIÓN */
     .comparison-conclusion {
       margin-top: 40px;
@@ -721,6 +944,7 @@
       transform: translateY(-3px);
       box-shadow: 0 15px 30px rgba(0,212,255,0.7);
     }
+    
     /* POR QUÉ ELEGIRNOS */
     .why-choose-us {
       padding: 80px 0;
@@ -776,6 +1000,7 @@
       font-size: 1.5rem;
       margin-bottom: 15px;
     }
+    
     /* FORMULARIO + VIDEO MÁS ARRIBA - ACHICADO */
     .hero-glass {
       background: rgba(255, 255, 255, 0.96);
@@ -790,6 +1015,7 @@
       position: relative;
       z-index: 10;
     }
+    
     /* VIDEO VERTICAL VIMEO */
     .video-box {
       border-radius: 25px;
@@ -811,6 +1037,7 @@
       top: 0;
       left: 0;
     }
+    
     /* FORMULARIO MINIMALISTA - NUEVO DISEÑO */
     .form-minimalist {
       background: white;
@@ -930,6 +1157,7 @@
     .security-badge i {
       color: #4CAF50;
     }
+    
     /* CONTADOR REGRESIVO COMPACTO EN EL FORMULARIO */
     .countdown-compact {
       background: linear-gradient(90deg, #FF3B30, #FF6B6B);
@@ -984,6 +1212,7 @@
       font-size: 0.7rem;
       text-transform: uppercase;
     }
+    
     /* ALERTA DE CUPOS DISMINUYENDO */
     .slots-alert {
       background: rgba(255,59,48,0.1);
@@ -1017,6 +1246,7 @@
       color: #FF3B30;
       margin-left: 10px;
     }
+    
     /* ALERTA DE URGENCIA */
     .urgency-alert {
       background: rgba(255,59,48,0.1);
@@ -1045,6 +1275,7 @@
       font-size: 0.85rem;
       margin: 0;
     }
+    
     /* PRECIOS DESTACADOS */
     .price-comparison {
       background: rgba(0,212,255,0.1);
@@ -1087,6 +1318,7 @@
       display: inline-block;
       margin-top: 5px;
     }
+    
     /* PRECIOS EN SECCIÓN ANTES/DESPUÉS */
     .price-banner {
       background: var(--gradient-bf);
@@ -1112,6 +1344,7 @@
       color: rgba(255,255,255,0.7);
       font-size: 1.2rem;
     }
+    
     /* SECCIÓN ANTES Y DESPUÉS - 3 BLOQUES CON IMAGEN COMBINADA */
     .before-after {
       padding: 80px 0;
@@ -1204,6 +1437,7 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       z-index: 3;
     }
+    
     /* SECCIÓN TESTIMONIOS */
     .testimonials {
       padding: 80px 0;
@@ -1274,6 +1508,7 @@
       font-size: 0.85rem;
       color: rgba(255,255,255,0.7);
     }
+    
     /* SECCIÓN DOCTOR */
     .doctor-section {
       padding: 80px 0;
@@ -1350,7 +1585,8 @@
       transform: translateY(-3px);
       box-shadow: 0 15px 30px rgba(0,212,255,0.6);
     }
-    /* SECCIÓN PREGUNTAS FRECUENTES */
+    
+    /* SECCIÓN PREGUNTAS FRECUENTES - MEJORADA PARA MÓVILES */
     .faq-section {
       padding: 80px 0;
       background: linear-gradient(135deg, #f8f9fa, #e9ecef);
@@ -1457,6 +1693,7 @@
       border-radius: 8px;
       margin-top: 15px;
     }
+    
     /* LLAMADOS A LA ACCIÓN */
     .cta-section {
       padding: 60px 0;
@@ -1559,6 +1796,7 @@
     .cta-button.secondary:hover {
       background: var(--blue);
     }
+    
     /* PRECIOS EN CTA */
     .cta-prices {
       background: rgba(0,212,255,0.1);
@@ -1584,6 +1822,7 @@
       color: #FF3B30;
       text-align: center;
     }
+    
     /* CONTADOR */
     .visitor-count {
       position: fixed;
@@ -1617,6 +1856,7 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0.3; }
     }
+    
     /* BOTÓN DE CALENDARIO */
     .cal-button {
       background: var(--gradient-bf);
@@ -1643,6 +1883,7 @@
       transform: translateY(-3px);
       box-shadow: 0 12px 25px rgba(255,59,48,0.6);
     }
+    
     /* NOTIFICACIÓN EN TIEMPO REAL */
     .real-time-notification {
       position: fixed;
@@ -1683,7 +1924,8 @@
       font-size: 0.8rem;
       color: #666;
     }
-    /* Pop-up de Salida (CSS) */
+    
+    /* Pop-up de Salida (CSS) - MEJORADO PARA MÓVILES */
     .exit-popup-overlay {
       position: fixed;
       top: 0;
@@ -1698,6 +1940,7 @@
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
+      padding: 20px;
     }
    
     .exit-popup-overlay.active {
@@ -1710,11 +1953,13 @@
       border-radius: 20px;
       padding: 30px;
       max-width: 500px;
-      width: 90%;
+      width: 100%;
       position: relative;
       transform: scale(0.8);
       transition: transform 0.3s ease;
       box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      max-height: 90vh;
+      overflow-y: auto;
     }
    
     .exit-popup-overlay.active .exit-popup {
@@ -1838,7 +2083,8 @@
       text-transform: uppercase;
       color: #666;
     }
-    /* RESPONSIVE */
+    
+    /* RESPONSIVE - MEJORAS ESPECÍFICAS PARA MÓVIL */
     @media (max-width: 992px) {
       .hero {
         background-position: 80% -250px;
@@ -1963,6 +2209,32 @@
     }
 
     @media (max-width: 768px) {
+      /* Mostrar banner móvil */
+      .mobile-banner {
+        display: flex;
+      }
+      
+      /* Selector de idioma optimizado para móviles */
+      .language-selector {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
+        gap: 8px;
+      }
+      
+      .language-btn {
+        font-size: 1rem;
+        padding: 4px 8px;
+      }
+      
+      /* Ocultar elementos menos importantes en móvil */
+      .certifications-section,
+      .social-proof-bar,
+      .emotional-benefits,
+      .urgency-reasons {
+        display: none;
+      }
+      
       .bf-bar {
         font-size: 0.9rem;
         padding: 12px;
@@ -2249,6 +2521,15 @@
         font-size: 1.1rem;
         padding: 12px 30px;
       }
+      
+      /* Mostrar tabla de comparación para móviles y ocultar la de escritorio */
+      .comparison-table {
+        display: none;
+      }
+      
+      .comparison-mobile {
+        display: block;
+      }
     }
 
     @media (max-width: 480px) {
@@ -2503,19 +2784,63 @@
         padding: 2px 6px;
         top: -8px;
       }
+      
+      /* Optimización para móviles de la tabla de comparación */
+      .comparison-mobile-card {
+        padding: 20px;
+      }
+      
+      .comparison-mobile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      
+      .comparison-mobile-title {
+        font-size: 1.2rem;
+      }
+      
+      .comparison-mobile-feature {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      
+      .comparison-mobile-feature-value {
+        align-self: flex-end;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Selector de idioma -->
-  <div class="language-selector">
-    <button class="language-btn active" data-lang="es" title="Español">ES</button>
-    <button class="language-btn" data-lang="en" title="English">EN</button>
+  <!-- Selector de idioma - MEJORADO CON MENÚ DESPLEGABLE -->
+  <div class="language-selector" id="languageSelector">
+    <div class="language-current" onclick="toggleLanguageMenu()">
+      <span id="currentLang">ES</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="language-options">
+      <button class="language-btn active" data-lang="es" onclick="changeLanguage('es')">ES</button>
+      <button class="language-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+    </div>
   </div>
+  
+  <!-- Banner móvil -->
+  <div class="mobile-banner" id="mobileBanner">
+    <div class="mobile-banner-text">
+      <span>¡Limpieza dental GRATIS! <i class="fas fa-tooth"></i> Toca aquí</span>
+    </div>
+    <button class="mobile-banner-button" onclick="scrollToForm()">¡Reservar!</button>
+    <button class="mobile-banner-close" onclick="closeMobileBanner()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  
   <!-- BARRA -->
   <div class="bf-bar" data-translate="bf-bar">
     BLACK FRIDAY: 50% OFF + REGALO | Quedan <span id="slots">17</span> cupos <span id="timer"></span>
   </div>
+  
   <!-- HERO: TEXTO MÍNIMO + IMAGEN DERECHA -->
   <section class="hero">
     <div class="container">
@@ -2540,6 +2865,7 @@
           </div>
         </div>
       </div>
+      
       <!-- FORMULARIO + VIDEO MÁS ARRIBA - ACHICADO -->
       <div class="hero-glass" id="mainForm">
         <div class="row g-4 align-items-center">
@@ -2553,6 +2879,7 @@
               </iframe>
             </div>
           </div>
+          
           <!-- FORMULARIO MINIMALISTA - NUEVO DISEÑO -->
           <div class="col-lg-6">
             <div class="form-minimalist">
@@ -2561,6 +2888,7 @@
                 <span class="badge" data-translate="form-badge-1">28-30 NOV</span>
                 <span class="badge" data-translate="form-badge-2">SOLO 50 CUPOS</span>
               </div>
+              
               <!-- CONTADOR REGRESIVO COMPACTO EN EL FORMULARIO -->
               <div class="countdown-compact">
                 <div class="countdown-compact-content">
@@ -2585,6 +2913,7 @@
                   </div>
                 </div>
               </div>
+              
               <!-- ALERTA DE CUPOS DISMINUYENDO -->
               <div class="slots-alert">
                 <i class="fas fa-exclamation-triangle"></i>
@@ -2593,6 +2922,7 @@
                   <p data-translate="slots-alert-text">¡Solo quedan <span class="slots-number" id="slotsForm">17</span> cupones!</p>
                 </div>
               </div>
+              
               <!-- ALERTA DE URGENCIA -->
               <div class="urgency-alert">
                 <i class="fas fa-fire"></i>
@@ -2601,6 +2931,7 @@
                   <p data-translate="urgency-alert-text">No pierda esta oportunidad única de blanqueamiento dental al 50% de descuento</p>
                 </div>
               </div>
+              
               <!-- PRECIOS DESTACADOS -->
               <div class="price-comparison">
                 <div class="price-original">
@@ -2613,6 +2944,7 @@
                   <span class="price-badge" data-translate="price-badge-text">¡Ahorra $2500!</span>
                 </div>
               </div>
+              
               <form id="reservationForm">
                 <div class="form-group">
                   <input type="text" placeholder="Nombre completo" required data-translate-placeholder="name-placeholder">
@@ -2650,6 +2982,7 @@
       </div>
     </div>
   </section>
+  
   <!-- GARANTÍAS MEJORADAS -->
   <section class="guarantees-section">
     <div class="container">
@@ -2672,6 +3005,7 @@
       </div>
     </div>
   </section>
+  
   <!-- CERTIFICACIONES Y AVALES -->
   <section class="certifications-section">
     <div class="container">
@@ -2692,6 +3026,7 @@
       </div>
     </div>
   </section>
+  
   <!-- PROOF SOCIAL NUMÉRICO -->
   <section class="social-proof-bar">
     <div class="container">
@@ -2711,6 +3046,7 @@
       </div>
     </div>
   </section>
+  
   <!-- SECCIÓN ANTES Y DESPUÉS - 3 BLOQUES CON IMAGEN COMBINADA -->
   <section class="before-after">
     <div class="container">
@@ -2754,6 +3090,7 @@
       </div>
     </div>
   </section>
+  
   <!-- COMPARACIÓN DIRECTA CON ALTERNATIVAS - MEJORADA -->
   <section class="comparison-section">
     <div class="container">
@@ -2772,6 +3109,7 @@
         </div>
       </div>
       
+      <!-- TABLA DE COMPARACIÓN PARA ESCRITORIO -->
       <div class="comparison-table">
         <div class="comparison-header">
           <div class="comparison-feature"><span data-translate="feature-label">Característica</span></div>
@@ -2980,6 +3318,207 @@
         </div>
       </div>
       
+      <!-- TABLA DE COMPARACIÓN PARA MÓVILES - MEJORADA -->
+      <div class="comparison-mobile">
+        <!-- Tarjeta Nuestro Tratamiento -->
+        <div class="comparison-mobile-card our-treatment">
+          <div class="comparison-mobile-header">
+            <div class="comparison-mobile-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="comparison-mobile-title" data-translate="our-treatment">Nuestro Tratamiento</div>
+          </div>
+          <div class="comparison-mobile-features">
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-clock"></i>
+                <span data-translate="feature-time">Tiempo de Tratamiento</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-check comparison-check"></i>
+                <span data-translate="our-time">1 Hora</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-chart-line"></i>
+                <span data-translate="feature-results">Resultados Garantizados</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-check comparison-check"></i>
+                <span data-translate="our-results">Hasta 8 tonos</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-teeth"></i>
+                <span data-translate="feature-sensitivity">Sensibilidad</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-check comparison-check"></i>
+                <span data-translate="our-sensitivity">Cero</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-shield-alt"></i>
+                <span>Seguridad</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-check comparison-check"></i>
+                <span>Máxima</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-calendar-check"></i>
+                <span>Duración de Resultados</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-check comparison-check"></i>
+                <span>Hasta 2 años</span>
+              </div>
+            </div>
+          </div>
+          <div class="comparison-mobile-price">
+            <div class="comparison-mobile-price-value our-price" data-translate="our-price">$2500</div>
+            <div class="comparison-mobile-badge value-badge">MEJOR VALOR</div>
+          </div>
+        </div>
+        
+        <!-- Tarjeta Kits Caseros -->
+        <div class="comparison-mobile-card">
+          <div class="comparison-mobile-header">
+            <div class="comparison-mobile-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <div class="comparison-mobile-title" data-translate="kits-caseros">Kits Caseros</div>
+          </div>
+          <div class="comparison-mobile-features">
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-clock"></i>
+                <span data-translate="feature-time">Tiempo de Tratamiento</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-times comparison-cross"></i>
+                <span data-translate="kits-time">Semanas</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-chart-line"></i>
+                <span data-translate="feature-results">Resultados Garantizados</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-times comparison-cross"></i>
+                <span data-translate="kits-results">Variables</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-teeth"></i>
+                <span data-translate="feature-sensitivity">Sensibilidad</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-times comparison-cross"></i>
+                <span data-translate="kits-sensitivity">Alta</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-shield-alt"></i>
+                <span>Seguridad</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-times comparison-cross"></i>
+                <span>Riesgosa</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-calendar-check"></i>
+                <span>Duración de Resultados</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-times comparison-cross"></i>
+                <span>Pocos meses</span>
+              </div>
+            </div>
+          </div>
+          <div class="comparison-mobile-price">
+            <div class="comparison-mobile-price-value" data-translate="kits-price">$500-$1500</div>
+            <div class="feature-note">Resultados pobres</div>
+          </div>
+        </div>
+        
+        <!-- Tarjeta Otras Clínicas -->
+        <div class="comparison-mobile-card">
+          <div class="comparison-mobile-header">
+            <div class="comparison-mobile-icon">
+              <i class="fas fa-clinic-medical"></i>
+            </div>
+            <div class="comparison-mobile-title" data-translate="otras-clinicas">Otras Clínicas</div>
+          </div>
+          <div class="comparison-mobile-features">
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-clock"></i>
+                <span data-translate="feature-time">Tiempo de Tratamiento</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-check comparison-check"></i>
+                <span data-translate="clinics-time">1-2 Horas</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-chart-line"></i>
+                <span data-translate="feature-results">Resultados Garantizados</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-check comparison-check"></i>
+                <span data-translate="clinics-results">Variables</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-teeth"></i>
+                <span data-translate="feature-sensitivity">Sensibilidad</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-check comparison-check"></i>
+                <span data-translate="clinics-sensitivity">Moderada</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-shield-alt"></i>
+                <span>Seguridad</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-check comparison-check"></i>
+                <span>Alta</span>
+              </div>
+            </div>
+            <div class="comparison-mobile-feature">
+              <div class="comparison-mobile-feature-name">
+                <i class="fas fa-calendar-check"></i>
+                <span>Duración de Resultados</span>
+              </div>
+              <div class="comparison-mobile-feature-value">
+                <i class="fas fa-check comparison-check"></i>
+                <span>1-2 años</span>
+              </div>
+            </div>
+          </div>
+          <div class="comparison-mobile-price">
+            <div class="comparison-mobile-price-value" data-translate="clinics-price">$5000+</div>
+            <div class="feature-note">Muy costoso</div>
+          </div>
+        </div>
+      </div>
+      
       <!-- Conclusión destacada -->
       <div class="comparison-conclusion">
         <div class="conclusion-card">
@@ -3008,6 +3547,7 @@
       </div>
     </div>
   </section>
+  
   <!-- POR QUÉ ELEGIRNOS -->
   <section class="why-choose-us">
     <div class="container">
@@ -3044,6 +3584,7 @@
       </div>
     </div>
   </section>
+  
   <!-- BENEFICIOS EMOCIONALES -->
   <section class="emotional-benefits">
     <div class="container">
@@ -3068,6 +3609,7 @@
       </div>
     </div>
   </section>
+  
   <!-- POR QUÉ AHORA -->
   <section class="urgency-reasons">
     <div class="container">
@@ -3088,6 +3630,7 @@
       </div>
     </div>
   </section>
+  
   <!-- PROCESO SIMPLIFICADO MEJORADO -->
   <section class="simple-process">
     <div class="container">
@@ -3117,6 +3660,7 @@
       </div>
     </div>
   </section>
+  
   <!-- SECCIÓN TESTIMONIOS -->
   <section class="testimonials">
     <div class="container">
@@ -3168,6 +3712,7 @@
       </div>
     </div>
   </section>
+  
   <!-- SECCIÓN DOCTOR -->
   <section class="doctor-section">
     <div class="container">
@@ -3209,7 +3754,8 @@
       </div>
     </div>
   </section>
-  <!-- SECCIÓN PREGUNTAS FRECUENTES -->
+  
+  <!-- SECCIÓN PREGUNTAS FRECUENTES - MEJORADA PARA MÓVILES -->
   <section class="faq-section">
     <div class="container">
       <h2 data-translate="faq-title">Preguntas Frecuentes</h2>
@@ -3303,6 +3849,7 @@
       </div>
     </div>
   </section>
+  
   <!-- LLAMADOS A LA ACCIÓN -->
   <section class="cta-section">
     <div class="cta-content">
@@ -3339,11 +3886,13 @@
       </div>
     </div>
   </section>
+  
   <!-- CONTADOR -->
   <div class="visitor-count" id="visitorCount">
     <div class="dot"></div>
     <span id="visitors">23</span> <span data-translate="viewers-text">personas viendo esta oferta</span>
   </div>
+  
   <!-- NOTIFICACIÓN EN TIEMPO REAL -->
   <div class="real-time-notification" id="realTimeNotification">
     <div class="notification-content">
@@ -3353,7 +3902,8 @@
       </div>
     </div>
   </div>
-  <!-- Pop-up de Salida -->
+  
+  <!-- Pop-up de Salida - MEJORADO PARA MÓVILES -->
   <div class="exit-popup-overlay" id="exitPopup">
     <div class="exit-popup">
       <button class="close-popup" onclick="closeExitPopup()">
@@ -3388,6 +3938,7 @@
       </div>
     </div>
   </div>
+  
   <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -3773,6 +4324,9 @@
         }
       });
      
+      // Actualizar el idioma actual mostrado
+      document.getElementById('currentLang').textContent = lang.toUpperCase();
+     
       // Traducir todos los elementos con atributos data-translate
       document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate');
@@ -3791,6 +4345,14 @@
      
       // Traducir el título de la página
       document.title = translations[lang].title;
+     
+      // Cerrar el menú de idioma después de seleccionar
+      document.getElementById('languageSelector').classList.remove('expanded');
+    }
+   
+    // Función para alternar el menú de idioma
+    function toggleLanguageMenu() {
+      document.getElementById('languageSelector').classList.toggle('expanded');
     }
    
     // Detectar el idioma del navegador y establecerlo como predeterminado
@@ -3812,11 +4374,12 @@
       // Detectar el idioma del navegador
       detectBrowserLanguage();
      
-      // Agregar event listeners a los botones de idioma
-      document.querySelectorAll('.language-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          changeLanguage(this.dataset.lang);
-        });
+      // Cerrar el menú de idioma al hacer clic fuera de él
+      document.addEventListener('click', function(event) {
+        const languageSelector = document.getElementById('languageSelector');
+        if (!languageSelector.contains(event.target)) {
+          languageSelector.classList.remove('expanded');
+        }
       });
     });
   </script>
@@ -3834,6 +4397,22 @@
       "María González", "Carlos Rodríguez", "Ana Martínez", "Pedro López", "Laura Sánchez",
       "José García", "Sofía Hernández", "Miguel Pérez", "Elena Díaz", "Juan Martínez"
     ];
+    
+    // Mostrar banner móvil después de 15 segundos
+    setTimeout(function() {
+      const mobileBanner = document.getElementById('mobileBanner');
+      mobileBanner.classList.add('show');
+    }, 15000);
+    
+    // Cerrar banner móvil
+    function closeMobileBanner() {
+      const mobileBanner = document.getElementById('mobileBanner');
+      mobileBanner.classList.add('hide');
+      setTimeout(function() {
+        mobileBanner.classList.remove('show');
+        mobileBanner.classList.remove('hide');
+      }, 300);
+    }
    
     // Actualizar contador de cupos con lógica realista
     function updateSlots() {
