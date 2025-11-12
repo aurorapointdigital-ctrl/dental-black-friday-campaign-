@@ -50,7 +50,7 @@
     }
     h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
     
-    /* 1. SELECTOR DE IDIOMA OPTIMIZADO PARA MÓVIL */
+    /* 1. SELECTOR DE IDIOMA OPTIMIZADO PARA MÓVIL - CORREGIDO */
     .language-selector {
       position: fixed;
       top: 20px;
@@ -66,29 +66,35 @@
       transition: all 0.3s ease;
     }
     
-    /* Selector de idioma adaptativo para móvil */
+    /* Selector de idioma adaptativo para móvil - CORREGIDO */
     @media (max-width: 768px) {
       .language-selector {
-        top: 15px;
-        right: 15px;
-        padding: 6px 12px;
-        transform: scale(0.9);
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        transform: scale(0.8);
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(15px);
+        z-index: 1003; /* Mayor que el banner móvil */
       }
       
       .language-btn {
-        font-size: 1rem !important;
+        font-size: 0.9rem !important;
         padding: 4px 8px !important;
+        min-height: 30px !important;
+      }
+      
+      .bf-bar {
+        padding-top: 50px !important; /* Espacio para el selector de idioma */
       }
     }
     
     @media (max-width: 480px) {
       .language-selector {
-        top: 10px;
-        right: 10px;
-        padding: 5px 10px;
-        transform: scale(0.85);
+        top: 5px;
+        right: 5px;
+        padding: 4px 8px;
+        transform: scale(0.75);
       }
     }
    
@@ -113,7 +119,7 @@
       box-shadow: 0 3px 10px rgba(0,212,255,0.3);
     }
     
-    /* 2. BANNER MÓVIL MEJORADO */
+    /* 2. BANNER MÓVIL MEJORADO - CORREGIDO */
     .mobile-banner {
       display: none;
       position: fixed;
@@ -205,7 +211,7 @@
       }
     }
     
-    /* 4. TABLA DE COMPARACIÓN OPTIMIZADA PARA MÓVIL */
+    /* 4. TABLA DE COMPARACIÓN OPTIMIZADA PARA MÓVIL - CORREGIDA */
     .comparison-mobile {
       display: none;
     }
@@ -394,6 +400,36 @@
       
       .comparison-mobile-card.our-treatment .comparison-mobile-price {
         color: #FF3B30;
+      }
+      
+      /* NUEVO: Etiquetas de desventajas para Kits Caseros y Otras Clínicas */
+      .comparison-mobile-card:not(.our-treatment) .comparison-mobile-price {
+        position: relative;
+      }
+      
+      .comparison-mobile-card:not(.our-treatment) .comparison-mobile-price::after {
+        content: "";
+        display: block;
+        margin-top: 8px;
+        padding: 6px 10px;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-align: center;
+      }
+      
+      .comparison-mobile-card:nth-child(2) .comparison-mobile-price::after {
+        content: "Resultados pobres";
+        background: rgba(244,67,54,0.1);
+        color: #F44336;
+        border: 1px solid rgba(244,67,54,0.3);
+      }
+      
+      .comparison-mobile-card:nth-child(3) .comparison-mobile-price::after {
+        content: "Muy costoso";
+        background: rgba(255,152,0,0.1);
+        color: #FF9800;
+        border: 1px solid rgba(255,152,0,0.3);
       }
     }
     
@@ -3004,7 +3040,7 @@
     <button class="language-btn" data-lang="en" title="English">EN</button>
   </div>
   
-  <!-- 2. BANNER MÓVIL MEJORADO -->
+  <!-- 2. BANNER MÓVIL MEJORADO - CORREGIDO -->
   <div class="mobile-banner" id="mobileBanner">
     <div class="mobile-banner-content">
       <button class="mobile-banner-close" id="closeMobileBanner">
@@ -3487,7 +3523,7 @@
         </div>
       </div>
       
-      <!-- VERSIÓN MÓVIL DE LA COMPARACIÓN -->
+      <!-- VERSIÓN MÓVIL DE LA COMPARACIÓN - CORREGIDA -->
       <div class="comparison-mobile">
         <div class="comparison-mobile-cards">
           <!-- Nuestro tratamiento -->
@@ -4531,7 +4567,7 @@
       "José García", "Sofía Hernández", "Miguel Pérez", "Elena Díaz", "Juan Martínez"
     ];
     
-    // 2. BANNER MÓVIL MEJORADO - Funcionalidad
+    // 2. BANNER MÓVIL MEJORADO - CORREGIDO
     function showMobileBanner() {
       // Solo mostrar en dispositivos móviles
       if (window.innerWidth <= 768) {
@@ -4555,17 +4591,8 @@
       // Cerrar banner al hacer clic en la X
       document.getElementById('closeMobileBanner').addEventListener('click', closeMobileBanner);
       
-      // Cerrar banner al hacer scroll
-      let scrollTimer;
-      window.addEventListener('scroll', function() {
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(() => {
-          const mobileBanner = document.getElementById('mobileBanner');
-          if (!mobileBanner.classList.contains('hidden')) {
-            closeMobileBanner();
-          }
-        }, 500);
-      });
+      // Cerrar banner al hacer clic en el botón RESERVAR
+      document.querySelector('.mobile-banner-btn').addEventListener('click', closeMobileBanner);
     });
    
     // Actualizar contador de cupos con lógica realista
